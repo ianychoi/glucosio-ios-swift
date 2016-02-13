@@ -56,10 +56,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF0580D11C6FA2420098A7E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DF0580D21C6FA4CA0098A7E0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DF0580D31C6FA4D40098A7E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		DF0580D41C6FA4DD0098A7E0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DF732EC81C6F9FEF00814635 /* LaunchScreen.storyboard */,
+				DF732EC31C6F9FEF00814635 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		DF0580D51C6FA4EB0098A7E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF732EC61C6F9FEF00814635 /* Assets.xcassets */,
+				DF732ECB1C6F9FEF00814635 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = glucosio;
+			sourceTree = "<group>";
+		};
+		DF0580D61C6FA51A0098A7E0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DF0580D11C6FA2420098A7E0 /* Model */,
+				DF0580D21C6FA4CA0098A7E0 /* ViewControllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		DF732EB31C6F9FEF00814635 = {
 			isa = PBXGroup;
 			children = (
 				DF732EBE1C6F9FEF00814635 /* glucosio */,
+				DF0580D51C6FA4EB0098A7E0 /* Supporting Files */,
 				DF732ED31C6F9FEF00814635 /* glucosioTests */,
 				DF732EBD1C6F9FEF00814635 /* Products */,
 			);
@@ -77,12 +127,11 @@
 		DF732EBE1C6F9FEF00814635 /* glucosio */ = {
 			isa = PBXGroup;
 			children = (
+				DF0580D31C6FA4D40098A7E0 /* Extensions */,
+				DF0580D61C6FA51A0098A7E0 /* Classes */,
+				DF0580D41C6FA4DD0098A7E0 /* Storyboards */,
 				DF732EBF1C6F9FEF00814635 /* AppDelegate.swift */,
 				DF732EC11C6F9FEF00814635 /* ViewController.swift */,
-				DF732EC31C6F9FEF00814635 /* Main.storyboard */,
-				DF732EC61C6F9FEF00814635 /* Assets.xcassets */,
-				DF732EC81C6F9FEF00814635 /* LaunchScreen.storyboard */,
-				DF732ECB1C6F9FEF00814635 /* Info.plist */,
 			);
 			path = glucosio;
 			sourceTree = "<group>";
@@ -328,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = glucosio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.glucosio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -339,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = glucosio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.glucosio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,6 +439,7 @@
 				DF732EDB1C6F9FEF00814635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF732EDC1C6F9FEF00814635 /* Build configuration list for PBXNativeTarget "glucosioTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +448,7 @@
 				DF732EDE1C6F9FEF00814635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
