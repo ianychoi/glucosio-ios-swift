@@ -1,0 +1,9 @@
+//
+//  Debug.xcconfig
+//  glucosio
+//
+//  Created by Eugenio Baglieri on 13/02/16.
+//  Copyright © 2016 Eugenio Baglieri. All rights reserved.
+//
+
+OTHER_SWIFT_FLAGS = $(inherited) "-DDEBUG"
