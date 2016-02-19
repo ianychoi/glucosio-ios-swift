@@ -28,6 +28,11 @@
 		DF0581281C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0581271C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift */; };
 		DF05812C1C6FDDBB0098A7E0 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05812B1C6FDDBB0098A7E0 /* AppearanceController.swift */; };
 		DF05812F1C6FE0180098A7E0 /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05812E1C6FE0180098A7E0 /* With.swift */; };
+		DF19F3B81C75147100D163B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3B61C75147100D163B8 /* Model.xcdatamodeld */; };
+		DF19F3BF1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3BB1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift */; };
+		DF19F3C01C751C5B00D163B8 /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3BC1C751C5B00D163B8 /* ModelObject.swift */; };
+		DF19F3C11C751C5B00D163B8 /* Reading+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3BD1C751C5B00D163B8 /* Reading+CoreDataProperties.swift */; };
+		DF19F3C21C751C5B00D163B8 /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3BE1C751C5B00D163B8 /* Reading.swift */; };
 		DF1C0B741C73EC5200835A4A /* UIImage+ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C0B731C73EC5200835A4A /* UIImage+ImageAsset.swift */; };
 		DF1C0B761C73ED2000835A4A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C0B751C73ED2000835A4A /* TabBarController.swift */; };
 		DF1C0B7A1C73F72C00835A4A /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C0B791C73F72C00835A4A /* OverviewViewController.swift */; };
@@ -110,6 +115,11 @@
 		DF0581271C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+GLUCFont.swift"; sourceTree = "<group>"; };
 		DF05812B1C6FDDBB0098A7E0 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		DF05812E1C6FE0180098A7E0 /* With.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
+		DF19F3B71C75147100D163B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DF19F3BB1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModelObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF19F3BC1C751C5B00D163B8 /* ModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
+		DF19F3BD1C751C5B00D163B8 /* Reading+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF19F3BE1C751C5B00D163B8 /* Reading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
 		DF1C0B731C73EC5200835A4A /* UIImage+ImageAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageAsset.swift"; sourceTree = "<group>"; };
 		DF1C0B751C73ED2000835A4A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DF1C0B791C73F72C00835A4A /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +172,8 @@
 		DF0580D11C6FA2420098A7E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF19F3C31C751C6200D163B8 /* ManagedObject subclasses */,
+				DF19F3B61C75147100D163B8 /* Model.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,6 +311,17 @@
 				DF05812E1C6FE0180098A7E0 /* With.swift */,
 			);
 			name = Globals;
+			sourceTree = "<group>";
+		};
+		DF19F3C31C751C6200D163B8 /* ManagedObject subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				DF19F3BC1C751C5B00D163B8 /* ModelObject.swift */,
+				DF19F3BB1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift */,
+				DF19F3BE1C751C5B00D163B8 /* Reading.swift */,
+				DF19F3BD1C751C5B00D163B8 /* Reading+CoreDataProperties.swift */,
+			);
+			name = "ManagedObject subclasses";
 			sourceTree = "<group>";
 		};
 		DF732EB31C6F9FEF00814635 = {
@@ -551,13 +574,18 @@
 			files = (
 				DF732EC21C6F9FEF00814635 /* ViewController.swift in Sources */,
 				DF0581241C6FD3350098A7E0 /* UIColor+Hex.swift in Sources */,
+				DF19F3BF1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift in Sources */,
 				DF1C0B741C73EC5200835A4A /* UIImage+ImageAsset.swift in Sources */,
 				DF1C0B761C73ED2000835A4A /* TabBarController.swift in Sources */,
 				DF0581281C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift in Sources */,
+				DF19F3C11C751C5B00D163B8 /* Reading+CoreDataProperties.swift in Sources */,
 				DF05812F1C6FE0180098A7E0 /* With.swift in Sources */,
+				DF19F3C21C751C5B00D163B8 /* Reading.swift in Sources */,
 				DF05812C1C6FDDBB0098A7E0 /* AppearanceController.swift in Sources */,
 				DF1C0B7A1C73F72C00835A4A /* OverviewViewController.swift in Sources */,
 				DF732EC01C6F9FEF00814635 /* AppDelegate.swift in Sources */,
+				DF19F3B81C75147100D163B8 /* Model.xcdatamodeld in Sources */,
+				DF19F3C01C751C5B00D163B8 /* ModelObject.swift in Sources */,
 				DF05811D1C6FCF470098A7E0 /* AppereanceConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -859,6 +887,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF19F3B61C75147100D163B8 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF19F3B71C75147100D163B8 /* Model.xcdatamodel */,
+			);
+			currentVersion = DF19F3B71C75147100D163B8 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DF732EB41C6F9FEF00814635 /* Project object */;
 }
