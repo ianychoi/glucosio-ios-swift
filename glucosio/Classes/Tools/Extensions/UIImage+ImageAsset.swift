@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
 
-    convenience init(asset: GLUCAppereance.Asset) {
+    convenience init(asset: GLUCAsset) {
         self.init(named: asset.rawValue)!
     }
     

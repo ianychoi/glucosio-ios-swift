@@ -13,6 +13,6 @@ For example to change multiple properties of an object
 - parameter item:  The item, it can be an object or structure or something else.
 - parameter block: The block that contains statements that refers to item
 */
-public func with<T>(item: T, @noescape block: T -> Void) {
+public func with<T>(_ item: T, block: @noescape (T) -> Void) {
     block(item)
 }

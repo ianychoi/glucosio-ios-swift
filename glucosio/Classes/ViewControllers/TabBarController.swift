@@ -29,7 +29,7 @@ class TabBarController: UITabBarController {
         
         tabBar.items?.forEach {
             if let currentImage = $0.image {
-                $0.image = currentImage.imageWithRenderingMode(.AlwaysOriginal)
+                $0.image = currentImage.withRenderingMode(.alwaysOriginal)
             }
         }
     }

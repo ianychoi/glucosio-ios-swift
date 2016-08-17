@@ -7,65 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF0580E01C6FC90B0098A7E0 /* CoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = DF0580DF1C6FC90B0098A7E0 /* CoreDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF0580E71C6FC90B0098A7E0 /* CoreDataStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0580DD1C6FC90B0098A7E0 /* CoreDataStack.framework */; };
-		DF0580EE1C6FC90B0098A7E0 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0580ED1C6FC90B0098A7E0 /* CoreDataStackTests.swift */; };
-		DF0580F21C6FC90B0098A7E0 /* CoreDataStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0580DD1C6FC90B0098A7E0 /* CoreDataStack.framework */; };
-		DF0580F31C6FC90B0098A7E0 /* CoreDataStack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF0580DD1C6FC90B0098A7E0 /* CoreDataStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DF05810C1C6FC99B0098A7E0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0580FC1C6FC9540098A7E0 /* CoreDataStack.swift */; };
-		DF05810D1C6FC99B0098A7E0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0580FD1C6FC9540098A7E0 /* Logger.swift */; };
-		DF05810E1C6FC99B0098A7E0 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0580FE1C6FC9540098A7E0 /* NSManagedObject.swift */; };
-		DF05810F1C6FC99B0098A7E0 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0580FF1C6FC9540098A7E0 /* NSManagedObjectContext.swift */; };
-		DF0581101C6FC99B0098A7E0 /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0581001C6FC9540098A7E0 /* NSManagedObjectModel.swift */; };
-		DF0581111C6FC99B0098A7E0 /* NSPersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0581011C6FC9540098A7E0 /* NSPersistentStore.swift */; };
-		DF0581121C6FC99B0098A7E0 /* NSPersistentStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0581021C6FC9540098A7E0 /* NSPersistentStoreCoordinator.swift */; };
-		DF0581131C6FC99B0098A7E0 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0581031C6FC9540098A7E0 /* Types.swift */; };
 		DF05811A1C6FCD130098A7E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF0581191C6FCD130098A7E0 /* Localizable.strings */; };
-		DF05811D1C6FCF470098A7E0 /* AppereanceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05811C1C6FCF470098A7E0 /* AppereanceConstants.swift */; };
-		DF0581211C6FCFAF0098A7E0 /* lato-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF05811F1C6FCFA30098A7E0 /* lato-bold.ttf */; };
-		DF0581221C6FCFB10098A7E0 /* lato.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF0581201C6FCFA30098A7E0 /* lato.ttf */; };
-		DF0581241C6FD3350098A7E0 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0581231C6FD3350098A7E0 /* UIColor+Hex.swift */; };
-		DF0581281C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0581271C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift */; };
-		DF05812C1C6FDDBB0098A7E0 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05812B1C6FDDBB0098A7E0 /* AppearanceController.swift */; };
-		DF05812F1C6FE0180098A7E0 /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05812E1C6FE0180098A7E0 /* With.swift */; };
-		DF19F3B81C75147100D163B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3B61C75147100D163B8 /* Model.xcdatamodeld */; };
-		DF19F3BF1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3BB1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift */; };
-		DF19F3C01C751C5B00D163B8 /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3BC1C751C5B00D163B8 /* ModelObject.swift */; };
-		DF19F3C11C751C5B00D163B8 /* Reading+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3BD1C751C5B00D163B8 /* Reading+CoreDataProperties.swift */; };
-		DF19F3C21C751C5B00D163B8 /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19F3BE1C751C5B00D163B8 /* Reading.swift */; };
-		DF1C0B741C73EC5200835A4A /* UIImage+ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C0B731C73EC5200835A4A /* UIImage+ImageAsset.swift */; };
-		DF1C0B761C73ED2000835A4A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C0B751C73ED2000835A4A /* TabBarController.swift */; };
-		DF1C0B7A1C73F72C00835A4A /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C0B791C73F72C00835A4A /* OverviewViewController.swift */; };
-		DF732EC01C6F9FEF00814635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF732EBF1C6F9FEF00814635 /* AppDelegate.swift */; };
-		DF732EC21C6F9FEF00814635 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF732EC11C6F9FEF00814635 /* ViewController.swift */; };
 		DF732EC51C6F9FEF00814635 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF732EC31C6F9FEF00814635 /* Main.storyboard */; };
 		DF732EC71C6F9FEF00814635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF732EC61C6F9FEF00814635 /* Assets.xcassets */; };
 		DF732ECA1C6F9FEF00814635 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF732EC81C6F9FEF00814635 /* LaunchScreen.storyboard */; };
 		DF732ED51C6F9FEF00814635 /* glucosioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF732ED41C6F9FEF00814635 /* glucosioTests.swift */; };
+		DFF4C19C1D64759700B472CD /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C18B1D64759700B472CD /* AppearanceController.swift */; };
+		DFF4C19D1D64759700B472CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C18D1D64759700B472CD /* AppDelegate.swift */; };
+		DFF4C19E1D64759700B472CD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C18F1D64759700B472CD /* Model.xcdatamodeld */; };
+		DFF4C19F1D64759700B472CD /* AppereanceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C1931D64759700B472CD /* AppereanceConstants.swift */; };
+		DFF4C1A01D64759700B472CD /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C1951D64759700B472CD /* UIColor+Hex.swift */; };
+		DFF4C1A11D64759700B472CD /* UIImage+ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C1961D64759700B472CD /* UIImage+ImageAsset.swift */; };
+		DFF4C1A21D64759700B472CD /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C1971D64759700B472CD /* With.swift */; };
+		DFF4C1A31D64759700B472CD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C1991D64759700B472CD /* OverviewViewController.swift */; };
+		DFF4C1A41D64759700B472CD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C19A1D64759700B472CD /* TabBarController.swift */; };
+		DFF4C1A51D64759700B472CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C19B1D64759700B472CD /* ViewController.swift */; };
+		DFF4C1AA1D6475A700B472CD /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C1A71D6475A700B472CD /* Debug.xcconfig */; };
+		DFF4C1AB1D6475A700B472CD /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C1A81D6475A700B472CD /* Release.xcconfig */; };
+		DFF4C1AC1D6475A700B472CD /* Testing.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C1A91D6475A700B472CD /* Testing.xcconfig */; };
+		DFF4C1B51D64763500B472CD /* lato-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C1B31D64763500B472CD /* lato-bold.ttf */; };
+		DFF4C1B61D64763500B472CD /* lato.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C1B41D64763500B472CD /* lato.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DF0580E81C6FC90B0098A7E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF732EB41C6F9FEF00814635 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF0580DC1C6FC90B0098A7E0;
-			remoteInfo = CoreDataStack;
-		};
-		DF0580EA1C6FC90B0098A7E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF732EB41C6F9FEF00814635 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF732EBB1C6F9FEF00814635;
-			remoteInfo = glucosio;
-		};
-		DF0580F01C6FC90B0098A7E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF732EB41C6F9FEF00814635 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF0580DC1C6FC90B0098A7E0;
-			remoteInfo = CoreDataStack;
-		};
 		DF732ED11C6F9FEF00814635 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DF732EB41C6F9FEF00814635 /* Project object */;
@@ -82,7 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DF0580F31C6FC90B0098A7E0 /* CoreDataStack.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,42 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DF0580DD1C6FC90B0098A7E0 /* CoreDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF0580DF1C6FC90B0098A7E0 /* CoreDataStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
-		DF0580E11C6FC90B0098A7E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF0580E61C6FC90B0098A7E0 /* CoreDataStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF0580ED1C6FC90B0098A7E0 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
-		DF0580EF1C6FC90B0098A7E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF0580FC1C6FC9540098A7E0 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		DF0580FD1C6FC9540098A7E0 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		DF0580FE1C6FC9540098A7E0 /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
-		DF0580FF1C6FC9540098A7E0 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
-		DF0581001C6FC9540098A7E0 /* NSManagedObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectModel.swift; sourceTree = "<group>"; };
-		DF0581011C6FC9540098A7E0 /* NSPersistentStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentStore.swift; sourceTree = "<group>"; };
-		DF0581021C6FC9540098A7E0 /* NSPersistentStoreCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentStoreCoordinator.swift; sourceTree = "<group>"; };
-		DF0581031C6FC9540098A7E0 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		DF0581151C6FCA330098A7E0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		DF0581161C6FCA3F0098A7E0 /* Testing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Testing.xcconfig; sourceTree = "<group>"; };
-		DF0581171C6FCA4D0098A7E0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		DF0581191C6FCD130098A7E0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		DF05811C1C6FCF470098A7E0 /* AppereanceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppereanceConstants.swift; sourceTree = "<group>"; };
-		DF05811F1C6FCFA30098A7E0 /* lato-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-bold.ttf"; sourceTree = "<group>"; };
-		DF0581201C6FCFA30098A7E0 /* lato.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato.ttf; sourceTree = "<group>"; };
-		DF0581231C6FD3350098A7E0 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		DF0581271C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+GLUCFont.swift"; sourceTree = "<group>"; };
-		DF05812B1C6FDDBB0098A7E0 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
-		DF05812E1C6FE0180098A7E0 /* With.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
-		DF19F3B71C75147100D163B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		DF19F3BB1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModelObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DF19F3BC1C751C5B00D163B8 /* ModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
-		DF19F3BD1C751C5B00D163B8 /* Reading+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DF19F3BE1C751C5B00D163B8 /* Reading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
-		DF1C0B731C73EC5200835A4A /* UIImage+ImageAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageAsset.swift"; sourceTree = "<group>"; };
-		DF1C0B751C73ED2000835A4A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		DF1C0B791C73F72C00835A4A /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		DF732EBC1C6F9FEF00814635 /* glucosio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = glucosio.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF732EBF1C6F9FEF00814635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF732EC11C6F9FEF00814635 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DF732EC41C6F9FEF00814635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF732EC61C6F9FEF00814635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF732EC91C6F9FEF00814635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -133,29 +62,28 @@
 		DF732ED01C6F9FEF00814635 /* glucosioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = glucosioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF732ED41C6F9FEF00814635 /* glucosioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glucosioTests.swift; sourceTree = "<group>"; };
 		DF732ED61C6F9FEF00814635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFF4C18B1D64759700B472CD /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		DFF4C18D1D64759700B472CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DFF4C1901D64759700B472CD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DFF4C1931D64759700B472CD /* AppereanceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppereanceConstants.swift; sourceTree = "<group>"; };
+		DFF4C1951D64759700B472CD /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		DFF4C1961D64759700B472CD /* UIImage+ImageAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageAsset.swift"; sourceTree = "<group>"; };
+		DFF4C1971D64759700B472CD /* With.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
+		DFF4C1991D64759700B472CD /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		DFF4C19A1D64759700B472CD /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DFF4C19B1D64759700B472CD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFF4C1A71D6475A700B472CD /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		DFF4C1A81D6475A700B472CD /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		DFF4C1A91D6475A700B472CD /* Testing.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Testing.xcconfig; sourceTree = "<group>"; };
+		DFF4C1B31D64763500B472CD /* lato-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-bold.ttf"; sourceTree = "<group>"; };
+		DFF4C1B41D64763500B472CD /* lato.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DF0580D91C6FC90B0098A7E0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF0580E31C6FC90B0098A7E0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF0580E71C6FC90B0098A7E0 /* CoreDataStack.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DF732EB91C6F9FEF00814635 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0580F21C6FC90B0098A7E0 /* CoreDataStack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,159 +97,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF0580D11C6FA2420098A7E0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DF19F3C31C751C6200D163B8 /* ManagedObject subclasses */,
-				DF19F3B61C75147100D163B8 /* Model.xcdatamodeld */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		DF0580D21C6FA4CA0098A7E0 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				DF732EC11C6F9FEF00814635 /* ViewController.swift */,
-				DF1C0B751C73ED2000835A4A /* TabBarController.swift */,
-				DF1C0B791C73F72C00835A4A /* OverviewViewController.swift */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		DF0580D31C6FA4D40098A7E0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				DF0581231C6FD3350098A7E0 /* UIColor+Hex.swift */,
-				DF0581271C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift */,
-				DF1C0B731C73EC5200835A4A /* UIImage+ImageAsset.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		DF0580D41C6FA4DD0098A7E0 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				DF732EC81C6F9FEF00814635 /* LaunchScreen.storyboard */,
-				DF732EC31C6F9FEF00814635 /* Main.storyboard */,
-			);
-			name = Storyboards;
-			sourceTree = "<group>";
-		};
 		DF0580D51C6FA4EB0098A7E0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF05811E1C6FCF5E0098A7E0 /* Fonts */,
-				DF732EC61C6F9FEF00814635 /* Assets.xcassets */,
 				DF732ECB1C6F9FEF00814635 /* Info.plist */,
-				DF0581191C6FCD130098A7E0 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			path = glucosio;
-			sourceTree = "<group>";
-		};
-		DF0580D61C6FA51A0098A7E0 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				DF0580D11C6FA2420098A7E0 /* Model */,
-				DF0580D21C6FA4CA0098A7E0 /* ViewControllers */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		DF0580DE1C6FC90B0098A7E0 /* CoreDataStack */ = {
-			isa = PBXGroup;
-			children = (
-				DF0580DF1C6FC90B0098A7E0 /* CoreDataStack.h */,
-				DF0580E11C6FC90B0098A7E0 /* Info.plist */,
-				DF0580FC1C6FC9540098A7E0 /* CoreDataStack.swift */,
-				DF0580FD1C6FC9540098A7E0 /* Logger.swift */,
-				DF0580FE1C6FC9540098A7E0 /* NSManagedObject.swift */,
-				DF0580FF1C6FC9540098A7E0 /* NSManagedObjectContext.swift */,
-				DF0581001C6FC9540098A7E0 /* NSManagedObjectModel.swift */,
-				DF0581011C6FC9540098A7E0 /* NSPersistentStore.swift */,
-				DF0581021C6FC9540098A7E0 /* NSPersistentStoreCoordinator.swift */,
-				DF0581031C6FC9540098A7E0 /* Types.swift */,
-			);
-			name = CoreDataStack;
-			path = ../CoreDataStack;
-			sourceTree = "<group>";
-		};
-		DF0580EC1C6FC90B0098A7E0 /* CoreDataStackTests */ = {
-			isa = PBXGroup;
-			children = (
-				DF0580ED1C6FC90B0098A7E0 /* CoreDataStackTests.swift */,
-				DF0580EF1C6FC90B0098A7E0 /* Info.plist */,
-			);
-			path = CoreDataStackTests;
-			sourceTree = "<group>";
-		};
-		DF0580FB1C6FC9160098A7E0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DF0580DE1C6FC90B0098A7E0 /* CoreDataStack */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DF0581141C6FCA040098A7E0 /* Project Config */ = {
-			isa = PBXGroup;
-			children = (
-				DF0581151C6FCA330098A7E0 /* Debug.xcconfig */,
-				DF0581161C6FCA3F0098A7E0 /* Testing.xcconfig */,
-				DF0581171C6FCA4D0098A7E0 /* Release.xcconfig */,
-			);
-			name = "Project Config";
-			sourceTree = "<group>";
-		};
-		DF05811B1C6FCF1C0098A7E0 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				DF05811C1C6FCF470098A7E0 /* AppereanceConstants.swift */,
-			);
-			name = Constants;
-			sourceTree = "<group>";
-		};
-		DF05811E1C6FCF5E0098A7E0 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				DF05811F1C6FCFA30098A7E0 /* lato-bold.ttf */,
-				DF0581201C6FCFA30098A7E0 /* lato.ttf */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
-		DF05812A1C6FDDAA0098A7E0 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				DF05812B1C6FDDBB0098A7E0 /* AppearanceController.swift */,
-			);
-			name = Other;
-			sourceTree = "<group>";
-		};
-		DF05812D1C6FE0070098A7E0 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
-		DF0581301C6FE2020098A7E0 /* Globals */ = {
-			isa = PBXGroup;
-			children = (
-				DF05812E1C6FE0180098A7E0 /* With.swift */,
-			);
-			name = Globals;
-			sourceTree = "<group>";
-		};
-		DF19F3C31C751C6200D163B8 /* ManagedObject subclasses */ = {
-			isa = PBXGroup;
-			children = (
-				DF19F3BC1C751C5B00D163B8 /* ModelObject.swift */,
-				DF19F3BB1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift */,
-				DF19F3BE1C751C5B00D163B8 /* Reading.swift */,
-				DF19F3BD1C751C5B00D163B8 /* Reading+CoreDataProperties.swift */,
-			);
-			name = "ManagedObject subclasses";
 			sourceTree = "<group>";
 		};
 		DF732EB31C6F9FEF00814635 = {
@@ -330,7 +112,6 @@
 				DF732EBE1C6F9FEF00814635 /* glucosio */,
 				DF0580D51C6FA4EB0098A7E0 /* Supporting Files */,
 				DF732ED31C6F9FEF00814635 /* glucosioTests */,
-				DF0580EC1C6FC90B0098A7E0 /* CoreDataStackTests */,
 				DF732EBD1C6F9FEF00814635 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -340,8 +121,6 @@
 			children = (
 				DF732EBC1C6F9FEF00814635 /* glucosio.app */,
 				DF732ED01C6F9FEF00814635 /* glucosioTests.xctest */,
-				DF0580DD1C6FC90B0098A7E0 /* CoreDataStack.framework */,
-				DF0580E61C6FC90B0098A7E0 /* CoreDataStackTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,16 +128,13 @@
 		DF732EBE1C6F9FEF00814635 /* glucosio */ = {
 			isa = PBXGroup;
 			children = (
-				DF0581301C6FE2020098A7E0 /* Globals */,
-				DF05812D1C6FE0070098A7E0 /* Protocols */,
-				DF0581141C6FCA040098A7E0 /* Project Config */,
-				DF05811B1C6FCF1C0098A7E0 /* Constants */,
-				DF0580FB1C6FC9160098A7E0 /* Frameworks */,
-				DF0580D31C6FA4D40098A7E0 /* Extensions */,
-				DF0580D61C6FA51A0098A7E0 /* Classes */,
-				DF05812A1C6FDDAA0098A7E0 /* Other */,
-				DF0580D41C6FA4DD0098A7E0 /* Storyboards */,
-				DF732EBF1C6F9FEF00814635 /* AppDelegate.swift */,
+				DFF4C1A61D6475A700B472CD /* Project Config */,
+				DFF4C1881D64734600B472CD /* UI */,
+				DF732EC81C6F9FEF00814635 /* LaunchScreen.storyboard */,
+				DF732EC31C6F9FEF00814635 /* Main.storyboard */,
+				DF732EC61C6F9FEF00814635 /* Assets.xcassets */,
+				DF0581191C6FCD130098A7E0 /* Localizable.strings */,
+				DFF4C1891D64759700B472CD /* Classes */,
 			);
 			path = glucosio;
 			sourceTree = "<group>";
@@ -372,57 +148,109 @@
 			path = glucosioTests;
 			sourceTree = "<group>";
 		};
+		DFF4C1881D64734600B472CD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C1B21D64763500B472CD /* Fonts */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		DFF4C1891D64759700B472CD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C1911D64759700B472CD /* Tools */,
+				DFF4C1981D64759700B472CD /* ViewControllers */,
+				DFF4C18A1D64759700B472CD /* Controllers */,
+				DFF4C18E1D64759700B472CD /* Model */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DFF4C18A1D64759700B472CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C18C1D64759700B472CD /* Application */,
+				DFF4C18B1D64759700B472CD /* AppearanceController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DFF4C18C1D64759700B472CD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C18D1D64759700B472CD /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		DFF4C18E1D64759700B472CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C18F1D64759700B472CD /* Model.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DFF4C1911D64759700B472CD /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C1921D64759700B472CD /* Constants */,
+				DFF4C1941D64759700B472CD /* Extensions */,
+				DFF4C1971D64759700B472CD /* With.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		DFF4C1921D64759700B472CD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C1931D64759700B472CD /* AppereanceConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		DFF4C1941D64759700B472CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C1951D64759700B472CD /* UIColor+Hex.swift */,
+				DFF4C1961D64759700B472CD /* UIImage+ImageAsset.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DFF4C1981D64759700B472CD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C1991D64759700B472CD /* OverviewViewController.swift */,
+				DFF4C19A1D64759700B472CD /* TabBarController.swift */,
+				DFF4C19B1D64759700B472CD /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DFF4C1A61D6475A700B472CD /* Project Config */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C1A71D6475A700B472CD /* Debug.xcconfig */,
+				DFF4C1A81D6475A700B472CD /* Release.xcconfig */,
+				DFF4C1A91D6475A700B472CD /* Testing.xcconfig */,
+			);
+			path = "Project Config";
+			sourceTree = "<group>";
+		};
+		DFF4C1B21D64763500B472CD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C1B31D64763500B472CD /* lato-bold.ttf */,
+				DFF4C1B41D64763500B472CD /* lato.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		DF0580DA1C6FC90B0098A7E0 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF0580E01C6FC90B0098A7E0 /* CoreDataStack.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		DF0580DC1C6FC90B0098A7E0 /* CoreDataStack */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF0580F41C6FC90B0098A7E0 /* Build configuration list for PBXNativeTarget "CoreDataStack" */;
-			buildPhases = (
-				DF0580D81C6FC90B0098A7E0 /* Sources */,
-				DF0580D91C6FC90B0098A7E0 /* Frameworks */,
-				DF0580DA1C6FC90B0098A7E0 /* Headers */,
-				DF0580DB1C6FC90B0098A7E0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CoreDataStack;
-			productName = CoreDataStack;
-			productReference = DF0580DD1C6FC90B0098A7E0 /* CoreDataStack.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		DF0580E51C6FC90B0098A7E0 /* CoreDataStackTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF0580F81C6FC90B0098A7E0 /* Build configuration list for PBXNativeTarget "CoreDataStackTests" */;
-			buildPhases = (
-				DF0580E21C6FC90B0098A7E0 /* Sources */,
-				DF0580E31C6FC90B0098A7E0 /* Frameworks */,
-				DF0580E41C6FC90B0098A7E0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DF0580E91C6FC90B0098A7E0 /* PBXTargetDependency */,
-				DF0580EB1C6FC90B0098A7E0 /* PBXTargetDependency */,
-			);
-			name = CoreDataStackTests;
-			productName = CoreDataStackTests;
-			productReference = DF0580E61C6FC90B0098A7E0 /* CoreDataStackTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		DF732EBB1C6F9FEF00814635 /* glucosio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF732ED91C6F9FEF00814635 /* Build configuration list for PBXNativeTarget "glucosio" */;
@@ -435,7 +263,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DF0580F11C6FC90B0098A7E0 /* PBXTargetDependency */,
 			);
 			name = glucosio;
 			productName = glucosio;
@@ -467,21 +294,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Eugenio Baglieri";
 				TargetAttributes = {
-					DF0580DC1C6FC90B0098A7E0 = {
-						CreatedOnToolsVersion = 7.2.1;
-					};
-					DF0580E51C6FC90B0098A7E0 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = DF732EBB1C6F9FEF00814635;
-					};
 					DF732EBB1C6F9FEF00814635 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					DF732ECF1C6F9FEF00814635 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = DF732EBB1C6F9FEF00814635;
 					};
 				};
@@ -501,37 +323,24 @@
 			targets = (
 				DF732EBB1C6F9FEF00814635 /* glucosio */,
 				DF732ECF1C6F9FEF00814635 /* glucosioTests */,
-				DF0580DC1C6FC90B0098A7E0 /* CoreDataStack */,
-				DF0580E51C6FC90B0098A7E0 /* CoreDataStackTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DF0580DB1C6FC90B0098A7E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF0580E41C6FC90B0098A7E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DF732EBA1C6F9FEF00814635 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF4C1AB1D6475A700B472CD /* Release.xcconfig in Resources */,
 				DF732ECA1C6F9FEF00814635 /* LaunchScreen.storyboard in Resources */,
-				DF0581211C6FCFAF0098A7E0 /* lato-bold.ttf in Resources */,
-				DF0581221C6FCFB10098A7E0 /* lato.ttf in Resources */,
+				DFF4C1AA1D6475A700B472CD /* Debug.xcconfig in Resources */,
 				DF05811A1C6FCD130098A7E0 /* Localizable.strings in Resources */,
 				DF732EC71C6F9FEF00814635 /* Assets.xcassets in Resources */,
 				DF732EC51C6F9FEF00814635 /* Main.storyboard in Resources */,
+				DFF4C1AC1D6475A700B472CD /* Testing.xcconfig in Resources */,
+				DFF4C1B51D64763500B472CD /* lato-bold.ttf in Resources */,
+				DFF4C1B61D64763500B472CD /* lato.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,48 +354,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DF0580D81C6FC90B0098A7E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF0581121C6FC99B0098A7E0 /* NSPersistentStoreCoordinator.swift in Sources */,
-				DF05810C1C6FC99B0098A7E0 /* CoreDataStack.swift in Sources */,
-				DF0581111C6FC99B0098A7E0 /* NSPersistentStore.swift in Sources */,
-				DF0581131C6FC99B0098A7E0 /* Types.swift in Sources */,
-				DF05810F1C6FC99B0098A7E0 /* NSManagedObjectContext.swift in Sources */,
-				DF05810E1C6FC99B0098A7E0 /* NSManagedObject.swift in Sources */,
-				DF05810D1C6FC99B0098A7E0 /* Logger.swift in Sources */,
-				DF0581101C6FC99B0098A7E0 /* NSManagedObjectModel.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF0580E21C6FC90B0098A7E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF0580EE1C6FC90B0098A7E0 /* CoreDataStackTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DF732EB81C6F9FEF00814635 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF732EC21C6F9FEF00814635 /* ViewController.swift in Sources */,
-				DF0581241C6FD3350098A7E0 /* UIColor+Hex.swift in Sources */,
-				DF19F3BF1C751C5B00D163B8 /* ModelObject+CoreDataProperties.swift in Sources */,
-				DF1C0B741C73EC5200835A4A /* UIImage+ImageAsset.swift in Sources */,
-				DF1C0B761C73ED2000835A4A /* TabBarController.swift in Sources */,
-				DF0581281C6FD8EE0098A7E0 /* UIFont+GLUCFont.swift in Sources */,
-				DF19F3C11C751C5B00D163B8 /* Reading+CoreDataProperties.swift in Sources */,
-				DF05812F1C6FE0180098A7E0 /* With.swift in Sources */,
-				DF19F3C21C751C5B00D163B8 /* Reading.swift in Sources */,
-				DF05812C1C6FDDBB0098A7E0 /* AppearanceController.swift in Sources */,
-				DF1C0B7A1C73F72C00835A4A /* OverviewViewController.swift in Sources */,
-				DF732EC01C6F9FEF00814635 /* AppDelegate.swift in Sources */,
-				DF19F3B81C75147100D163B8 /* Model.xcdatamodeld in Sources */,
-				DF19F3C01C751C5B00D163B8 /* ModelObject.swift in Sources */,
-				DF05811D1C6FCF470098A7E0 /* AppereanceConstants.swift in Sources */,
+				DFF4C1A51D64759700B472CD /* ViewController.swift in Sources */,
+				DFF4C19D1D64759700B472CD /* AppDelegate.swift in Sources */,
+				DFF4C19F1D64759700B472CD /* AppereanceConstants.swift in Sources */,
+				DFF4C19C1D64759700B472CD /* AppearanceController.swift in Sources */,
+				DFF4C1A41D64759700B472CD /* TabBarController.swift in Sources */,
+				DFF4C1A21D64759700B472CD /* With.swift in Sources */,
+				DFF4C19E1D64759700B472CD /* Model.xcdatamodeld in Sources */,
+				DFF4C1A31D64759700B472CD /* OverviewViewController.swift in Sources */,
+				DFF4C1A11D64759700B472CD /* UIImage+ImageAsset.swift in Sources */,
+				DFF4C1A01D64759700B472CD /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,21 +382,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DF0580E91C6FC90B0098A7E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF0580DC1C6FC90B0098A7E0 /* CoreDataStack */;
-			targetProxy = DF0580E81C6FC90B0098A7E0 /* PBXContainerItemProxy */;
-		};
-		DF0580EB1C6FC90B0098A7E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF732EBB1C6F9FEF00814635 /* glucosio */;
-			targetProxy = DF0580EA1C6FC90B0098A7E0 /* PBXContainerItemProxy */;
-		};
-		DF0580F11C6FC90B0098A7E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF0580DC1C6FC90B0098A7E0 /* CoreDataStack */;
-			targetProxy = DF0580F01C6FC90B0098A7E0 /* PBXContainerItemProxy */;
-		};
 		DF732ED21C6F9FEF00814635 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DF732EBB1C6F9FEF00814635 /* glucosio */;
@@ -643,69 +409,8 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DF0580F51C6FC90B0098A7E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CoreDataStack/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.CoreDataStack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DF0580F61C6FC90B0098A7E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CoreDataStack/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.CoreDataStack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DF0580F91C6FC90B0098A7E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CoreDataStackTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.CoreDataStackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/glucosio.app/glucosio";
-			};
-			name = Debug;
-		};
-		DF0580FA1C6FC90B0098A7E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CoreDataStackTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.CoreDataStackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/glucosio.app/glucosio";
-			};
-			name = Release;
-		};
 		DF732ED71C6F9FEF00814635 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF0581151C6FCA330098A7E0 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -717,8 +422,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -751,7 +458,6 @@
 		};
 		DF732ED81C6F9FEF00814635 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF0581171C6FCA4D0098A7E0 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -763,8 +469,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -791,26 +499,31 @@
 		DF732EDA1C6F9FEF00814635 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = glucosio/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.glucosio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DF732EDB1C6F9FEF00814635 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = glucosio/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.glucosio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -822,6 +535,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.glucosioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/glucosio.app/glucosio";
 			};
 			name = Debug;
@@ -834,6 +548,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.eugeniobaglieri.glucosioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/glucosio.app/glucosio";
 			};
 			name = Release;
@@ -841,24 +557,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DF0580F41C6FC90B0098A7E0 /* Build configuration list for PBXNativeTarget "CoreDataStack" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF0580F51C6FC90B0098A7E0 /* Debug */,
-				DF0580F61C6FC90B0098A7E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DF0580F81C6FC90B0098A7E0 /* Build configuration list for PBXNativeTarget "CoreDataStackTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF0580F91C6FC90B0098A7E0 /* Debug */,
-				DF0580FA1C6FC90B0098A7E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DF732EB71C6F9FEF00814635 /* Build configuration list for PBXProject "glucosio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -889,12 +587,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DF19F3B61C75147100D163B8 /* Model.xcdatamodeld */ = {
+		DFF4C18F1D64759700B472CD /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DF19F3B71C75147100D163B8 /* Model.xcdatamodel */,
+				DFF4C1901D64759700B472CD /* Model.xcdatamodel */,
 			);
-			currentVersion = DF19F3B71C75147100D163B8 /* Model.xcdatamodel */;
+			currentVersion = DFF4C1901D64759700B472CD /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

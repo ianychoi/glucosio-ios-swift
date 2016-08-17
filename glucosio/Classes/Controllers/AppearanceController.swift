@@ -23,72 +23,72 @@ class AppearanceController {
         
         // MARK: UITabBar
         with(UITabBar.appearance()) {
-            $0.barTintColor = GLUCAppereance.Color.Pink.color()
-            $0.translucent = false
-            $0.tintColor = UIColor.whiteColor()
+            $0.barTintColor = GLUCColor.pink
+            $0.isTranslucent = false
+            $0.tintColor = UIColor.white
         }
         
         // MARK: UITabBarItem
         with(UITabBarItem.appearance()) {
             $0.setTitleTextAttributes(
-                [NSForegroundColorAttributeName : UIColor.yellowColor(),
-                    NSFontAttributeName : GLUCAppereance.Font.defaultFont()],
-                forState: .Normal)
+                [NSForegroundColorAttributeName : UIColor.yellow,
+                    NSFontAttributeName : GLUCFont.regular],
+                for: UIControlState())
             $0.setTitleTextAttributes(
-                [NSForegroundColorAttributeName : UIColor.whiteColor(),
-                    NSFontAttributeName : GLUCAppereance.Font.defaultFont()],
-                forState: .Selected)
+                [NSForegroundColorAttributeName : UIColor.white,
+                    NSFontAttributeName : GLUCFont.regular],
+                for: .selected)
         }
         
         // MARK: UINavigationBar
         with(UINavigationBar.appearance()) {
-            $0.barTintColor = GLUCAppereance.Color.Pink.color()
-            $0.translucent = false
-            $0.tintColor = UIColor.whiteColor()
+            $0.barTintColor = GLUCColor.pink
+            $0.isTranslucent = false
+            $0.tintColor = UIColor.white
             $0.titleTextAttributes = [
-                NSForegroundColorAttributeName: UIColor.whiteColor(),
-                NSFontAttributeName : GLUCAppereance.Font.defaultFont()
+                NSForegroundColorAttributeName: UIColor.white,
+                NSFontAttributeName : GLUCFont.regular
             ]
         }
         
         // MARK: UIBarButtonItem
         with(UIBarButtonItem.appearance()) {
             $0.setTitleTextAttributes(
-                [NSFontAttributeName : GLUCAppereance.Font.defaultFont()],
-                forState: .Normal)
+                [NSFontAttributeName : GLUCFont.regular],
+                for: UIControlState())
         }
         
         // MARK: UILabel
         with(UILabel.appearance()) {
-            $0.font = GLUCAppereance.Font.defaultFont()
+            $0.font = GLUCFont.regular
         }
         
         //MARK: UIButton
         with(UIButton.appearance()) {
-            $0.tintColor = GLUCAppereance.Color.Pink.color()
+            $0.tintColor = GLUCColor.pink
         }
         
         //MARK: UITextField
         with(UITextField.appearance()) {
-            $0.font = GLUCAppereance.Font.defaultFont()
+            $0.font = GLUCFont.regular
         }
         
         //MARK: UISegmentedControl
         with(UISegmentedControl.appearance()) {
-            $0.tintColor = GLUCAppereance.Color.Pink.color()
+            $0.tintColor = GLUCColor.pink
             $0.setTitleTextAttributes(
-                [NSFontAttributeName : GLUCAppereance.Font.defaultFont()],
-                forState: .Normal)
+                [NSFontAttributeName : GLUCFont.regular],
+                for: UIControlState())
         }
         
         //MARK: UITableView
         with(UITableView.appearance()) {
-            $0.backgroundColor = UIColor.whiteColor()
+            $0.backgroundColor = UIColor.white
         }
         
         //MARK: UITableViewCell
         with(UITableViewCell.appearance()) {
-            $0.tintColor = GLUCAppereance.Color.Pink.color()
+            $0.tintColor = GLUCColor.pink
         }
         
         //MARK: UIView
