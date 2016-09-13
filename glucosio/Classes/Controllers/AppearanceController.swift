@@ -55,7 +55,7 @@ class AppearanceController {
         with(UIBarButtonItem.appearance()) {
             $0.setTitleTextAttributes(
                 [NSFontAttributeName : GLUCFont.regular],
-                for: UIControlState())
+                for: .normal)
         }
         
         // MARK: UILabel
@@ -78,7 +78,7 @@ class AppearanceController {
             $0.tintColor = GLUCColor.pink
             $0.setTitleTextAttributes(
                 [NSFontAttributeName : GLUCFont.regular],
-                for: UIControlState())
+                for: .normal)
         }
         
         //MARK: UITableView

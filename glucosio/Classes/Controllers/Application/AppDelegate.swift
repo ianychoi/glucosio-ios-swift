@@ -14,9 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
         AppearanceController.setAppearanceDefaults()
+        
+        let root = ListPickerController(items: [1,2,3,4,5,6,7,8,9,10])
+        root.finishOnPicking = true
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = root
+        self.window?.backgroundColor = UIColor.white
+        self.window?.makeKeyAndVisible()
         
         return true
     }
