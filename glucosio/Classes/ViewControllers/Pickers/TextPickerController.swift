@@ -17,15 +17,13 @@ protocol TextPickerControllerDelegate: class {
 
 class TextPickerController: PickerController {
     
-//    typealias TextPickerCompletion = (_ picker: TextPickerController, _ pickedText: String) -> Void
-    
-//    typealias TextPickerCancellation = (_ picker: TextPickerController) -> Void
+    typealias TextPickerCompletion = (_ pickedText: String) -> Void
+    typealias TextPickerCancellation = () -> Void
     
     weak var delegate: TextPickerControllerDelegate?
     
-//    var onPickerDidFinish: TextPickerCompletion?
-    
-//    var onPickerDidCancel: TextPickerCancellation?
+    fileprivate var onPickerDidFinish: TextPickerCompletion?
+    fileprivate var onPickerDidCancel: TextPickerCancellation?
     
     fileprivate var pickedText: String {
         return textField.text ?? ""
@@ -65,6 +63,16 @@ class TextPickerController: PickerController {
         cancelBarButton.action = #selector(cancelButtonClicked(_:))
     }
     
+    // MARK: - Public methods
+    
+    func setOnPickerDidFinish(_ block: TextPickerCompletion?) {
+        onPickerDidFinish = block
+    }
+    
+    func setOnPickerDidCancel(_ block: TextPickerCancellation?) {
+        onPickerDidCancel = block
+    }
+    
     // MARK: - Private methods
     
     fileprivate func configureAutoLayout() {
@@ -92,16 +100,16 @@ class TextPickerController: PickerController {
     @objc private func cancelButtonClicked(_ button: UIBarButtonItem) {
         if let _delegate = delegate {
             _delegate.textPickerControllerDidCancel(self)
-//            return
+            return
         }
-//        onPickerDidCancel?(self)
+        onPickerDidCancel?()
     }
     
     @objc private func okButtonClicked(_ button: UIBarButtonItem) {
         if let _delegate = delegate {
             _delegate.textPickerController(self, didFinishPickingText: pickedText)
-//            return
+            return
         }
-//        onPickerDidFinish?(self, pickedText)
+        onPickerDidFinish?(pickedText)
     }
 }

@@ -12,7 +12,7 @@ class SettingsTableViewCell: UITableViewCell {
     
     typealias CellSelectionHandler = () -> Void
     
-    var onSelection: CellSelectionHandler? = nil
+    fileprivate(set) var onSelection: CellSelectionHandler? = nil
     
     func setOnSelectionHandler(_ block: CellSelectionHandler?) {
         onSelection = block
