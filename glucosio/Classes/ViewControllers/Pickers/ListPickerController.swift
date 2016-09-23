@@ -137,7 +137,7 @@ class ListPickerController<ItemType>: PickerController, UITableViewDelegate {
         pickedItem = dataSource.itemAtIndexPath(indexPath)
         
         // Use of async dispatch resolve this: http://stackoverflow.com/questions/21075540/presentviewcontrolleranimatedyes-view-will-not-appear-until-user-taps-again/30787046#30787046
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             if self.finishOnPicking == true {
                 self.onPickerDidFinish?(self.pickedItem)
             }
