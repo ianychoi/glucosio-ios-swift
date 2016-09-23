@@ -34,18 +34,37 @@ class SettingsViewController: UIViewController {
         countryCell.textLabel?.text = L10n.helloactivityCountry.localized()
         countryCell.detailTextLabel?.text = currentUser.country
         
+        let countryPicker = ListPickerController(items: [String]())
+        
         let ageCell = SettingsTableViewCell(style: .subtitle, reuseIdentifier: nil)
         ageCell.textLabel?.text = L10n.helloactivityAge.localized()
         ageCell.detailTextLabel?.text = String(describing: currentUser.age)
+        
+        let agePicker = TextPickerController()
+        agePicker.setPopupPresentation()
+        agePicker.textField.keyboardType = .decimalPad
+        agePicker.setOnPickerDidFinish({ text in
+            currentUser.age = Int(text)!
+            PersistenceController.sharedInstance.saveUser(user: currentUser)
+            self.dismiss(animated: true)
+        })
+        agePicker.setOnPickerDidCancel({ 
+            self.dismiss(animated: true)
+        })
+        
+        ageCell.setOnSelectionHandler({
+            self.present(agePicker, animated: true, completion: nil)
+        })
+        
         
         let genderCell = SettingsTableViewCell(style: .subtitle, reuseIdentifier: nil)
         genderCell.textLabel?.text = L10n.helloactivityGender.localized()
         genderCell.detailTextLabel?.text = String(describing: currentUser.gender).localized()
         
         let genderPicker = ListPickerController(items: [Gender.male, Gender.female])
+        genderPicker.setPopupPresentation()
         
         genderPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized() })
-        
         genderPicker.setOnPickerDidFinish({ [unowned self] (pickedGender) in
             print("Completion called on main thread:\(Thread.isMainThread)")
             currentUser.gender = pickedGender
@@ -57,7 +76,6 @@ class SettingsViewController: UIViewController {
         })
         
         genderCell.setOnSelectionHandler({ [unowned self] in
-            genderPicker.setPopupPresentation()
             self.present(genderPicker, animated: true, completion: nil)
         })
         
