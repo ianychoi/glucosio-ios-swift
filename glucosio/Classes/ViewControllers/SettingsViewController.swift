@@ -10,26 +10,6 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    fileprivate struct StoryboardIdentifiers {
-    
-        static let settingCellIdentifier = "SettingsCell"
-        
-    }
-
-    var welcomeMode: Bool = false
-    
-    fileprivate let user: User = PersistenceController.sharedInstance.currentUser
-    
-    fileprivate lazy var aboutKeys: [String] = {
-    
-        let about = [
-            L10n.preferencesVersion,
-            L10n.preferencesTerms,
-            L10n.preferencesPrivacy
-        ]
-        
-        return about
-    }()
     
     @IBOutlet fileprivate weak var stackView: UIStackView!
     
@@ -41,117 +21,93 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet fileprivate weak var settingsTableView: UITableView! {
         didSet {
-//            settingsTableView.dataSource = self
-//            settingsTableView.delegate = self
+            settingsTableView.dataSource = self
+            settingsTableView.delegate = self
         }
     }
     
+    fileprivate lazy var settingsStaticCells: [UITableViewCell] = {
+        
+        let currentUser = PersistenceController.sharedInstance.currentUser
+        
+        let countryCell = SettingsTableViewCell(style: .subtitle, reuseIdentifier: nil)
+        countryCell.textLabel?.text = L10n.helloactivityCountry.localized()
+        countryCell.detailTextLabel?.text = currentUser.country
+        
+        let ageCell = SettingsTableViewCell(style: .subtitle, reuseIdentifier: nil)
+        ageCell.textLabel?.text = L10n.helloactivityAge.localized()
+        ageCell.detailTextLabel?.text = String(describing: currentUser.age)
+        
+        let genderCell = SettingsTableViewCell(style: .subtitle, reuseIdentifier: nil)
+        genderCell.textLabel?.text = L10n.helloactivityGender.localized()
+        genderCell.detailTextLabel?.text = String(describing: currentUser.gender).localized()
+        
+        let genderPicker = ListPickerController(items: [Gender.male, Gender.female])
+        
+        genderPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized() })
+        
+        genderPicker.setOnPickerDidFinish({ [unowned self] (pickedGender) in
+            print("Completion called on main thread:\(Thread.isMainThread)")
+            currentUser.gender = pickedGender
+            PersistenceController.sharedInstance.saveUser(user: currentUser)
+            self.dismiss(animated: true)
+        })
+        genderPicker.setOnPickerDidCancel({ [unowned self] in
+            self.dismiss(animated: true)
+        })
+        
+        genderCell.setOnSelectionHandler({ [unowned self] in
+            genderPicker.setPopupPresentation()
+            self.present(genderPicker, animated: true, completion: nil)
+        })
+        
+        let diabetesCell = SettingsTableViewCell(style: .subtitle, reuseIdentifier: nil)
+        diabetesCell.textLabel?.text = L10n.helloactivitySpinnerDiabetesType.localized()
+        diabetesCell.detailTextLabel?.text = String(describing: currentUser.diabetes)
+        
+        return [countryCell, ageCell, genderCell, diabetesCell]
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
 }
 
-//extension SettingsViewController: UITableViewDataSource {
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        // We don't include the 'About' section if we are in welcome mode
-//        return (welcomeMode == true) ? 1 : 2
-//    }
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//        let retVal: Int
-//        
-//        switch section {
-//            
-//        case 0: retVal = settings.count
-//        
-//        case 1: retVal = aboutKeys.count
-//        
-//        default: retVal = 5
-//        }
-//        
-//        return retVal
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        let cell: UITableViewCell
-//        
-//        if let _cell = tableView.dequeueReusableCell(withIdentifier: StoryboardIdentifiers.settingCellIdentifier) {
-//          
-//            cell = _cell
-//        } else {
-//
-//            cell = UITableViewCell(style: .value1, reuseIdentifier: StoryboardIdentifiers.settingCellIdentifier)
-//        }
-//        
-//        configureCell(cell, at: indexPath)
-//        
-//        return cell
-//    }
-//    
-//    fileprivate func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
-//        
-//        cell.textLabel?.minimumScaleFactor = 0.25
-//        cell.textLabel?.adjustsFontSizeToFitWidth = true;
-//        cell.textLabel?.numberOfLines = 2;
-//        cell.textLabel?.font = GLUCFont.regular
-//        cell.textLabel?.text = nil
-//        
-//        cell.detailTextLabel?.font = GLUCFont.regular
-//        cell.detailTextLabel?.text = nil
-//        
-//        cell.accessoryType = .none
-//        
-//        let section = indexPath.section
-//        let row = indexPath.row
-//        
-//        switch section {
-//        case 0:
-//            
-//            cell.textLabel?.text = titleForPreferenceKey(settings[row])?.localized()
-//            
-//            let value = valueForPreferenceKey(settings[row])
-//            
-//            let localizedValue: String
-//            
-//            if let _localizable = value as? Localizable {
-//                
-//                localizedValue = _localizable.localizedDescription
-//            }
-//            else if let _stringValue = value as? String {
-//                
-//                localizedValue = _stringValue.localized()
-//            }
-//            else {
-//            
-//                localizedValue = String(describing: value)
-//            }
-//        
-//            cell.detailTextLabel?.text = localizedValue
-//            
-//        case 1:
-//            cell.textLabel?.text = aboutKeys[row].localized()
-//        default: return
-//        }
-//        
-//    }
-//    
-//}
-//
-//extension SettingsViewController: UITableViewDelegate {
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//    }
-//
-//}
+extension SettingsViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // We don't include the 'About' section if we are in welcome mode
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return settingsStaticCells.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return settingsStaticCells[indexPath.row]
+    }
+    
+}
+
+extension SettingsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let selectedCell = tableView.cellForRow(at: indexPath) as? SettingsTableViewCell {
+            selectedCell.onSelection?()
+        }
+    }
+
+}
 

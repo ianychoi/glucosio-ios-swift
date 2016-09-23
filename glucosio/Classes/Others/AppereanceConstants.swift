@@ -17,9 +17,9 @@ struct GLUCColor {
 
 struct GLUCFont {
     
-    static private let regularFontName = "Lato-Regular"
+    static let regularFontName = "Lato-Regular"
     
-    static private let boldFontName = "Lato-Bold"
+    static let boldFontName = "Lato-Bold"
     
     static let regular = UIFont(name: regularFontName, size: UIFont.systemFontSize)!
     
@@ -40,5 +40,16 @@ extension GLUCAsset {
     func image() -> UIImage {
         return UIImage(asset: self)
     }
-    
+}
+
+
+
+/// Additional storyboards of the projects (other than main)
+/// if you add a new storyboard you should add a new case
+///
+/// - LaunchScreen: LaunchScreen storyboard
+/// - Pickers:      Pickers Storyboard
+enum GLUCStoryboard: String {
+    case LaunchScreen
+    case Pickers
 }

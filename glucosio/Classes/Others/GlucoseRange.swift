@@ -13,7 +13,7 @@ private let kRangeTypeKey = "glucose_range_type"
 private let kRangeLowerBoundKey = "glucose_range_lower_bound"
 private let kRangeUpperBoundKey = "glucose_range_upper_bound"
 
-class GlucoseRange: NSCoding {
+class GlucoseRange: NSObject, NSCoding {
     
     enum RangeType: Int, CustomStringConvertible {
         
@@ -53,6 +53,7 @@ class GlucoseRange: NSCoding {
         type = t
         lowerBound = lower
         upperBound = upper
+        super.init()
     }
     
     convenience init(lowerBound lower: Int, upperBound upper: Int) {

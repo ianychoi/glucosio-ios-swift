@@ -7,19 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF2218BE1D910FF1006F4F2B /* ListPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2218BD1D910FF1006F4F2B /* ListPickerController.swift */; };
+		DF2218C11D91120F006F4F2B /* IntrinsicSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2218C01D91120F006F4F2B /* IntrinsicSizedTableView.swift */; };
+		DF2A5B801D906CE900EE49C0 /* UIStoryboard+GLUCStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A5B7F1D906CE900EE49C0 /* UIStoryboard+GLUCStoryboard.swift */; };
+		DF2A5B821D9074E800EE49C0 /* UIViewController+StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A5B811D9074E800EE49C0 /* UIViewController+StoryboardInstantiable.swift */; };
+		DF2A5B841D90750C00EE49C0 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A5B831D90750C00EE49C0 /* StoryboardInstantiable.swift */; };
 		DF317E021D81E32A004EB661 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF317E011D81E32A004EB661 /* ArrayDataSource.swift */; };
+		DF44D2AE1D907ADA00785416 /* TextPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A5B851D9077A700EE49C0 /* TextPickerController.swift */; };
+		DF44D2B01D907BFD00785416 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44D2AF1D907BFD00785416 /* PickerController.swift */; };
+		DF5BD7AE1D935122006750F9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5BD7AD1D935122006750F9 /* SettingsTableViewCell.swift */; };
 		DF604C891D7F674B00F97F0C /* GlucoseRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF604C881D7F674B00F97F0C /* GlucoseRange.swift */; };
 		DF6AC63B1D64C1A100C78A4D /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AC63A1D64C1A100C78A4D /* L10n.swift */; };
 		DF6AC63F1D64C48D00C78A4D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AC63E1D64C48D00C78A4D /* String+Localization.swift */; };
 		DF6AC6411D64D51500C78A4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AC6401D64D51500C78A4D /* User.swift */; };
 		DF6AC6431D64D82D00C78A4D /* UnitOfMeasures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AC6421D64D82D00C78A4D /* UnitOfMeasures.swift */; };
 		DF6AC64B1D64F4AB00C78A4D /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AC64A1D64F4AB00C78A4D /* PersistenceController.swift */; };
-		DF6C3A1E1D86D8C4003372EB /* ListPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2577C21D80831E004F8439 /* ListPickerController.swift */; };
 		DF6C3A211D86D924003372EB /* GLUCBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C3A201D86D924003372EB /* GLUCBarButtonItem.swift */; };
 		DF732EC51C6F9FEF00814635 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF732EC31C6F9FEF00814635 /* Main.storyboard */; };
 		DF732EC71C6F9FEF00814635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF732EC61C6F9FEF00814635 /* Assets.xcassets */; };
 		DF732ECA1C6F9FEF00814635 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF732EC81C6F9FEF00814635 /* LaunchScreen.storyboard */; };
 		DF732ED51C6F9FEF00814635 /* glucosioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF732ED41C6F9FEF00814635 /* glucosioTests.swift */; };
+		DFEBDC971D89C13A00500435 /* PopupTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBDC951D89C13A00500435 /* PopupTransitionManager.swift */; };
+		DFEBDC981D89C13A00500435 /* PopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBDC961D89C13A00500435 /* PopupPresentationController.swift */; };
 		DFF4C19C1D64759700B472CD /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C18B1D64759700B472CD /* AppearanceController.swift */; };
 		DFF4C19D1D64759700B472CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C18D1D64759700B472CD /* AppDelegate.swift */; };
 		DFF4C19E1D64759700B472CD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C18F1D64759700B472CD /* Model.xcdatamodeld */; };
@@ -62,8 +71,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DF2577C21D80831E004F8439 /* ListPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPickerController.swift; sourceTree = "<group>"; };
+		DF2218BD1D910FF1006F4F2B /* ListPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPickerController.swift; sourceTree = "<group>"; };
+		DF2218C01D91120F006F4F2B /* IntrinsicSizedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntrinsicSizedTableView.swift; sourceTree = "<group>"; };
+		DF2A5B7F1D906CE900EE49C0 /* UIStoryboard+GLUCStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+GLUCStoryboard.swift"; sourceTree = "<group>"; };
+		DF2A5B811D9074E800EE49C0 /* UIViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
+		DF2A5B831D90750C00EE49C0 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		DF2A5B851D9077A700EE49C0 /* TextPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPickerController.swift; sourceTree = "<group>"; };
 		DF317E011D81E32A004EB661 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
+		DF44D2AF1D907BFD00785416 /* PickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
+		DF5BD7AD1D935122006750F9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		DF604C881D7F674B00F97F0C /* GlucoseRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseRange.swift; sourceTree = "<group>"; };
 		DF6AC6241D64B6AF00C78A4D /* genlocs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = genlocs.swift; sourceTree = "<group>"; };
 		DF6AC63A1D64C1A100C78A4D /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
@@ -80,9 +96,9 @@
 		DF732ED01C6F9FEF00814635 /* glucosioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = glucosioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF732ED41C6F9FEF00814635 /* glucosioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glucosioTests.swift; sourceTree = "<group>"; };
 		DF732ED61C6F9FEF00814635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF8E67E61D846B4A00FADC90 /* TextPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPickerController.swift; sourceTree = "<group>"; };
-		DFC8C08B1D8725E600B85949 /* PickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		DFDBA6211D6713BE00D380A4 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
+		DFEBDC951D89C13A00500435 /* PopupTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitionManager.swift; sourceTree = "<group>"; };
+		DFEBDC961D89C13A00500435 /* PopupPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupPresentationController.swift; sourceTree = "<group>"; };
 		DFF4C18B1D64759700B472CD /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		DFF4C18D1D64759700B472CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF4C1901D64759700B472CD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -131,12 +147,21 @@
 			path = glucosio;
 			sourceTree = "<group>";
 		};
+		DF2218BF1D9110B6006F4F2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF2218C01D91120F006F4F2B /* IntrinsicSizedTableView.swift */,
+				DF5BD7AD1D935122006750F9 /* SettingsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DF2577C11D8082CB004F8439 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
-				DFC8C08B1D8725E600B85949 /* PickerController.swift */,
-				DF2577C21D80831E004F8439 /* ListPickerController.swift */,
-				DF8E67E61D846B4A00FADC90 /* TextPickerController.swift */,
+				DF44D2AF1D907BFD00785416 /* PickerController.swift */,
+				DF2A5B851D9077A700EE49C0 /* TextPickerController.swift */,
+				DF2218BD1D910FF1006F4F2B /* ListPickerController.swift */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -144,6 +169,7 @@
 		DF317DFD1D81E204004EB661 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DFF4C1971D64759700B472CD /* With.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -160,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				DFDBA6211D6713BE00D380A4 /* DataSourceProtocol.swift */,
+				DF2A5B831D90750C00EE49C0 /* StoryboardInstantiable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -189,9 +216,6 @@
 				DFF4C1A61D6475A700B472CD /* Project Config */,
 				DFF4C1881D64734600B472CD /* UI */,
 				DF6AC63A1D64C1A100C78A4D /* L10n.swift */,
-				DF732EC81C6F9FEF00814635 /* LaunchScreen.storyboard */,
-				DF732EC31C6F9FEF00814635 /* Main.storyboard */,
-				DF732EC61C6F9FEF00814635 /* Assets.xcassets */,
 				DFF4C1B91D64790100B472CD /* Localizable.strings */,
 				DFF4C1891D64759700B472CD /* Classes */,
 			);
@@ -207,9 +231,21 @@
 			path = glucosioTests;
 			sourceTree = "<group>";
 		};
+		DFEBDC941D89C11F00500435 /* PopupPresentationController */ = {
+			isa = PBXGroup;
+			children = (
+				DFEBDC951D89C13A00500435 /* PopupTransitionManager.swift */,
+				DFEBDC961D89C13A00500435 /* PopupPresentationController.swift */,
+			);
+			name = PopupPresentationController;
+			sourceTree = "<group>";
+		};
 		DFF4C1881D64734600B472CD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DF732EC31C6F9FEF00814635 /* Main.storyboard */,
+				DF732EC81C6F9FEF00814635 /* LaunchScreen.storyboard */,
+				DF732EC61C6F9FEF00814635 /* Assets.xcassets */,
 				DFF4C1B21D64763500B472CD /* Fonts */,
 			);
 			name = UI;
@@ -218,21 +254,13 @@
 		DFF4C1891D64759700B472CD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DFF4C1911D64759700B472CD /* Tools */,
+				DFF4C1911D64759700B472CD /* Others */,
 				DFF4C1981D64759700B472CD /* ViewControllers */,
-				DFF4C18A1D64759700B472CD /* Controllers */,
+				DF2218BF1D9110B6006F4F2B /* Views */,
+				DFF4C18C1D64759700B472CD /* Application */,
 				DFF4C18E1D64759700B472CD /* Model */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		DFF4C18A1D64759700B472CD /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				DFF4C18C1D64759700B472CD /* Application */,
-				DFF4C18B1D64759700B472CD /* AppearanceController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		DFF4C18C1D64759700B472CD /* Application */ = {
@@ -253,28 +281,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DFF4C1911D64759700B472CD /* Tools */ = {
+		DFF4C1911D64759700B472CD /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				DF317E001D81E300004EB661 /* DataSource */,
 				DF317DFD1D81E204004EB661 /* Utilities */,
+				DF317E001D81E300004EB661 /* DataSource */,
 				DF6AC6471D64DAFB00C78A4D /* Protocols */,
-				DFF4C1921D64759700B472CD /* Constants */,
 				DFF4C1941D64759700B472CD /* Extensions */,
-				DFF4C1971D64759700B472CD /* With.swift */,
 				DF6AC6421D64D82D00C78A4D /* UnitOfMeasures.swift */,
 				DF604C881D7F674B00F97F0C /* GlucoseRange.swift */,
 				DF6C3A201D86D924003372EB /* GLUCBarButtonItem.swift */,
-			);
-			path = Tools;
-			sourceTree = "<group>";
-		};
-		DFF4C1921D64759700B472CD /* Constants */ = {
-			isa = PBXGroup;
-			children = (
+				DFF4C18B1D64759700B472CD /* AppearanceController.swift */,
 				DFF4C1931D64759700B472CD /* AppereanceConstants.swift */,
 			);
-			path = Constants;
+			path = Others;
 			sourceTree = "<group>";
 		};
 		DFF4C1941D64759700B472CD /* Extensions */ = {
@@ -283,6 +303,8 @@
 				DFF4C1951D64759700B472CD /* UIColor+Hex.swift */,
 				DFF4C1961D64759700B472CD /* UIImage+ImageAsset.swift */,
 				DF6AC63E1D64C48D00C78A4D /* String+Localization.swift */,
+				DF2A5B7F1D906CE900EE49C0 /* UIStoryboard+GLUCStoryboard.swift */,
+				DF2A5B811D9074E800EE49C0 /* UIViewController+StoryboardInstantiable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +312,7 @@
 		DFF4C1981D64759700B472CD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFEBDC941D89C11F00500435 /* PopupPresentationController */,
 				DF2577C11D8082CB004F8439 /* Pickers */,
 				DFF4C1991D64759700B472CD /* OverviewViewController.swift */,
 				DFF4C19A1D64759700B472CD /* TabBarController.swift */,
@@ -368,6 +391,7 @@
 				TargetAttributes = {
 					DF732EBB1C6F9FEF00814635 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = A6J677A893;
 						LastSwiftMigration = 0800;
 					};
 					DF732ECF1C6F9FEF00814635 = {
@@ -429,24 +453,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF6AC6411D64D51500C78A4D /* User.swift in Sources */,
+				DFEBDC971D89C13A00500435 /* PopupTransitionManager.swift in Sources */,
 				DFF4C1A51D64759700B472CD /* SettingsViewController.swift in Sources */,
 				DFF4C19D1D64759700B472CD /* AppDelegate.swift in Sources */,
 				DFF4C19F1D64759700B472CD /* AppereanceConstants.swift in Sources */,
+				DF44D2B01D907BFD00785416 /* PickerController.swift in Sources */,
 				DF6C3A211D86D924003372EB /* GLUCBarButtonItem.swift in Sources */,
+				DF2A5B801D906CE900EE49C0 /* UIStoryboard+GLUCStoryboard.swift in Sources */,
 				DF6AC63F1D64C48D00C78A4D /* String+Localization.swift in Sources */,
 				DF317E021D81E32A004EB661 /* ArrayDataSource.swift in Sources */,
 				DFF4C19C1D64759700B472CD /* AppearanceController.swift in Sources */,
 				DFF4C1A41D64759700B472CD /* TabBarController.swift in Sources */,
 				DF6AC6431D64D82D00C78A4D /* UnitOfMeasures.swift in Sources */,
+				DF44D2AE1D907ADA00785416 /* TextPickerController.swift in Sources */,
 				DFF4C1A21D64759700B472CD /* With.swift in Sources */,
 				DFF4C19E1D64759700B472CD /* Model.xcdatamodeld in Sources */,
+				DFEBDC981D89C13A00500435 /* PopupPresentationController.swift in Sources */,
 				DFF4C1A31D64759700B472CD /* OverviewViewController.swift in Sources */,
+				DF5BD7AE1D935122006750F9 /* SettingsTableViewCell.swift in Sources */,
 				DFF4C1A11D64759700B472CD /* UIImage+ImageAsset.swift in Sources */,
 				DF604C891D7F674B00F97F0C /* GlucoseRange.swift in Sources */,
 				DF6AC63B1D64C1A100C78A4D /* L10n.swift in Sources */,
-				DF6C3A1E1D86D8C4003372EB /* ListPickerController.swift in Sources */,
 				DFF4C1A01D64759700B472CD /* UIColor+Hex.swift in Sources */,
+				DF2A5B841D90750C00EE49C0 /* StoryboardInstantiable.swift in Sources */,
 				DF6AC64B1D64F4AB00C78A4D /* PersistenceController.swift in Sources */,
+				DF2A5B821D9074E800EE49C0 /* UIViewController+StoryboardInstantiable.swift in Sources */,
+				DF2218BE1D910FF1006F4F2B /* ListPickerController.swift in Sources */,
+				DF2218C11D91120F006F4F2B /* IntrinsicSizedTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +627,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A6J677A893;
 				INFOPLIST_FILE = glucosio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -609,6 +643,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A6J677A893;
 				INFOPLIST_FILE = glucosio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

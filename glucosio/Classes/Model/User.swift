@@ -19,7 +19,7 @@ private let kGLUCUserPreferredA1CUnitsPropertyKey = "preferredA1CUnitOfMeasure"
 private let kGLUCUserPreferredGlucoseRangePropertyKey = "preferredGlucoseRange"
 private let kGLUCUserAllowResearchUsePropertyKey = "allowResearchUse"
 
-class User: NSCoding {
+class User: NSObject, NSCoding {
     
     var country: String
     
@@ -40,7 +40,7 @@ class User: NSCoding {
     
     var allowResearchUse: Bool
     
-    init() {
+    override init() {
         let locale = NSLocale.current as NSLocale
         let defaultCountryCode = locale.object(forKey: .countryCode) as? String ?? "US"
             
@@ -54,27 +54,27 @@ class User: NSCoding {
         preferredA1CUnitOfMeasure = .percentage
         preferredGlucoseRange = GlucoseRange.ada
         allowResearchUse = true
+        super.init()
     }
     
     required init?(coder aDecoder: NSCoder) {
         
         country = aDecoder.decodeObject(forKey: kGLUCUserCountryPreferenceKey) as? String ?? ""
         age = aDecoder.decodeInteger(forKey: kGLUCUserAgePropertyKey)
-        gender = Gender(rawValue: aDecoder.decodeInteger(forKey: kGLUCUserAgePropertyKey)) ?? .male
+        gender = Gender(rawValue: aDecoder.decodeInteger(forKey: kGLUCUserGenderPropertyKey)) ?? .male
         diabetes = Diabetes(rawValue: aDecoder.decodeInteger(forKey: kGLUCUserDiabetesTypePropertyKey)) ?? .type2
         preferredBloodGlucoseUnitOfMeasure = GlucoseUnitOfMeasure(rawValue: aDecoder.decodeInteger(forKey: kGLUCUserPreferredBloodGlucoseUnitsPropertyKey)) ?? .mg_dL
         preferredBodyWeightUnitOfMeasure = BodyWeightUnitOfMeasure(rawValue: aDecoder.decodeInteger(forKey: kGLUCUserPreferredBodyWeightUnitsPropertyKey)) ?? .kilograms
         preferredA1CUnitOfMeasure = A1CUnitOfMeasure(rawValue: aDecoder.decodeInteger(forKey: kGLUCUserPreferredA1CUnitsPropertyKey)) ?? .percentage
         preferredGlucoseRange = aDecoder.decodeObject(forKey: kGLUCUserPreferredGlucoseRangePropertyKey) as? GlucoseRange ?? GlucoseRange.ada
         allowResearchUse = aDecoder.decodeBool(forKey: kGLUCUserAllowResearchUsePropertyKey)
-        
     }
     
     func encode(with aCoder: NSCoder) {
         with(aCoder) {
             $0.encode(country, forKey: kGLUCUserCountryPreferenceKey)
             $0.encode(age, forKey: kGLUCUserAgePropertyKey)
-            $0.encode(gender.rawValue, forKey: kGLUCUserAgePropertyKey)
+            $0.encode(gender.rawValue, forKey: kGLUCUserGenderPropertyKey)
             $0.encode(diabetes.rawValue, forKey: kGLUCUserDiabetesTypePropertyKey)
             $0.encode(preferredBloodGlucoseUnitOfMeasure.rawValue, forKey: kGLUCUserPreferredBloodGlucoseUnitsPropertyKey)
             $0.encode(preferredBodyWeightUnitOfMeasure.rawValue, forKey: kGLUCUserPreferredBodyWeightUnitsPropertyKey)

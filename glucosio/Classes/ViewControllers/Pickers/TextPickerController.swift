@@ -2,94 +2,106 @@
 //  TextPickerController.swift
 //  glucosio
 //
-//  Created by Eugenio Baglieri on 10/09/16.
+//  Created by Eugenio Baglieri on 19/09/16.
 //  Copyright © 2016 Eugenio Baglieri. All rights reserved.
 //
 
 import UIKit
 
-class TextPickerController: UINavigationController {
+protocol TextPickerControllerDelegate: class {
     
-    typealias TextPickerCompletion = (_ picker: TextPickerController, _ pickedText: String) -> Void
-    
-    typealias TextPickerCancellation = (_ picker: TextPickerController) -> Void
-    
-    /// This is a var implicitly unwrapped cause of init hierarchy
-    private var internalPicker: InternalPickerController<ItemType>!
-    
-    var onPickerDidFinish: ListPickerCompletion?
-    
-    var onPickerDidCancel: ListPickerCancellation?
-    
-    // MARK: Inits
-    
-    convenience init() {
-        let picker = InternalPickerController()
-        self.init(rootViewController: picker)
-        picker.pickerParent = self
-        internalPicker = picker
-    }
-    
-    override init(rootViewController: UIViewController) {
-        super.init(rootViewController: rootViewController)
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Private methods
-    
-    fileprivate func internalPickerWantsCancel() {
-        onPickerDidCancel?(self)
-    }
-    
-    fileprivate func internalPickerDidPickedItem(_ item: ItemType) {
-        onPickerDidFinish?(self, item)
-    }
+    func textPickerController(_ picker: TextPickerController, didFinishPickingText text: String)
+    func textPickerControllerDidCancel(_ picker: TextPickerController)
     
 }
 
-private class InternalTextPickerController: UIViewController {
+class TextPickerController: PickerController {
     
-    var pickerParent: ListPickerController<ItemType>!
+//    typealias TextPickerCompletion = (_ picker: TextPickerController, _ pickedText: String) -> Void
     
-    private var pickedText: String!
+//    typealias TextPickerCancellation = (_ picker: TextPickerController) -> Void
     
-    private lazy var cancelBarButton: GLUCBarButtonItem = {
-        let button = GLUCBarButtonItem(systemItem: .cancel, target: self, action: #selector(cancelButtonClicked(_:)))
+    weak var delegate: TextPickerControllerDelegate?
+    
+//    var onPickerDidFinish: TextPickerCompletion?
+    
+//    var onPickerDidCancel: TextPickerCancellation?
+    
+    fileprivate var pickedText: String {
+        return textField.text ?? ""
+    }
+    
+    let textField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        textField.returnKeyType = UIReturnKeyType.send
+        //textField.delegate = self
+        return textField
+    }()
+    
+    fileprivate lazy var okButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = GLUCFont.bold
+        button.setTitle("Ok".localized(), for: .normal)
+        button.addTarget(self, action: #selector(okButtonClicked(_:)), for: .touchUpInside)
         return button
     }()
     
-    //MARK: - Initialization
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     
     override func loadView() {
         super.loadView()
+        view.addSubview(textField)
+        view.addSubview(okButton)
+        configureAutoLayout()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = cancelBarButton
+        
+        cancelBarButton.target = self
+        cancelBarButton.action = #selector(cancelButtonClicked(_:))
     }
     
     // MARK: - Private methods
     
-    @objc private func cancelButtonClicked(_ button: UIBarButtonItem) {
-        pickerParent.internalPickerWantsCancel()
+    fileprivate func configureAutoLayout() {
+        
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[textField(>=200)]-|", options: [], metrics: nil, views: ["textField" : textField])
+        let centerOkButtonContstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[superview]-(<=1)-[okButton]", options: [.alignAllCenterX], metrics: nil,
+                                                                        views: [
+                                                                            "superview" : view,
+                                                                            "okButton" : okButton
+            ])
+        let verticalContstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[navBar]-20-[textField]-15-[okButton(44)]-(>=20)-[bottomGuide]", options: [], metrics: nil,
+                                                                  views: [
+                                                                    "navBar" : navigationBar,
+                                                                    "textField" : textField,
+                                                                    "okButton" : okButton,
+                                                                    "bottomGuide" : bottomLayoutGuide
+            ])
+        view.addConstraints(horizontalConstraints)
+        view.addConstraints(verticalContstraints)
+        view.addConstraints(centerOkButtonContstraints)
     }
     
+    // MARK - Button actions
+    
+    @objc private func cancelButtonClicked(_ button: UIBarButtonItem) {
+        if let _delegate = delegate {
+            _delegate.textPickerControllerDidCancel(self)
+//            return
+        }
+//        onPickerDidCancel?(self)
+    }
+    
+    @objc private func okButtonClicked(_ button: UIBarButtonItem) {
+        if let _delegate = delegate {
+            _delegate.textPickerController(self, didFinishPickingText: pickedText)
+//            return
+        }
+//        onPickerDidFinish?(self, pickedText)
+    }
 }
