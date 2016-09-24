@@ -18,23 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppearanceController.setAppearanceDefaults()
         
-        //let root = ListPickerController(items: [1,2,3,4,5,6,7,8,9,10])
-        //root.finishOnPicking = true
-        
-//        let lc = TextPickerController()
-//        lc.textField.placeholder = "Insert Text Here!!!!"
-//        lc.setPopupPresentation()
-        
-//        let lc = ListPickerController(items: [1,2,3,0,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10])
-//        lc.finishOnPicking = true
-//        lc.setPopupPresentation()
-//        
-//        let root = UINavigationController(rootViewController: UIViewController())
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = root
-//        self.window?.backgroundColor = UIColor.white
-//        self.window?.makeKeyAndVisible()
-//        root.present(lc, animated: true, completion: nil)
         return true
     }
 
