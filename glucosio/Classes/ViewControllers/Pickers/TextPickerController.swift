@@ -29,12 +29,13 @@ class TextPickerController: PickerController {
         return textField.text ?? ""
     }
     
-    let textField: UITextField = {
+    fileprivate(set) lazy var textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
         textField.returnKeyType = UIReturnKeyType.send
-        //textField.delegate = self
+        textField.enablesReturnKeyAutomatically = true
+        textField.addTarget(self, action: #selector(textFieldValueChanged(_:)), for: .editingChanged)
         return textField
     }()
     
@@ -44,6 +45,7 @@ class TextPickerController: PickerController {
         button.titleLabel?.font = GLUCFont.bold
         button.setTitle("Ok".localized(), for: .normal)
         button.addTarget(self, action: #selector(okButtonClicked(_:)), for: .touchUpInside)
+        button.isEnabled = false
         return button
     }()
     
@@ -58,7 +60,6 @@ class TextPickerController: PickerController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         cancelBarButton.target = self
         cancelBarButton.action = #selector(cancelButtonClicked(_:))
     }
@@ -77,7 +78,7 @@ class TextPickerController: PickerController {
     
     fileprivate func configureAutoLayout() {
         
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[textField(>=200)]-|", options: [], metrics: nil, views: ["textField" : textField])
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[textField(>=150)]-|", options: [], metrics: nil, views: ["textField" : textField])
         let centerOkButtonContstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[superview]-(<=1)-[okButton]", options: [.alignAllCenterX], metrics: nil,
                                                                         views: [
                                                                             "superview" : view,
@@ -95,9 +96,17 @@ class TextPickerController: PickerController {
         view.addConstraints(centerOkButtonContstraints)
     }
     
+    @objc fileprivate func textFieldValueChanged(_ sender: UITextField) {
+        if let _text = sender.text {
+            okButton.isEnabled = !_text.isEmpty
+        } else {
+            okButton.isEnabled = false
+        }
+    }
+    
     // MARK - Button actions
     
-    @objc private func cancelButtonClicked(_ button: UIBarButtonItem) {
+    @objc fileprivate func cancelButtonClicked(_ button: UIBarButtonItem) {
         if let _delegate = delegate {
             _delegate.textPickerControllerDidCancel(self)
             return
@@ -105,7 +114,7 @@ class TextPickerController: PickerController {
         onPickerDidCancel?()
     }
     
-    @objc private func okButtonClicked(_ button: UIBarButtonItem) {
+    @objc fileprivate func okButtonClicked(_ button: UIBarButtonItem) {
         if let _delegate = delegate {
             _delegate.textPickerController(self, didFinishPickingText: pickedText)
             return

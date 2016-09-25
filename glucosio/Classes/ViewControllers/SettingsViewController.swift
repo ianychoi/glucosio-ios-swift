@@ -155,10 +155,13 @@ extension SettingsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let selectedCell = tableView.cellForRow(at: indexPath) as? SettingsTableViewCell {
-            selectedCell.onSelection?()
+        // Use of async dispatch resolve this: http://stackoverflow.com/questions/21075540/presentviewcontrolleranimatedyes-view-will-not-appear-until-user-taps-again/30787046#30787046
+        DispatchQueue.main.async {
+            if let selectedCell = tableView.cellForRow(at: indexPath) as? SettingsTableViewCell {
+                selectedCell.onSelection?()
+            }
         }
-}
+    }
     
 }
 
