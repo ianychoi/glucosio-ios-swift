@@ -60,9 +60,9 @@ class AppearanceController {
         })
         
         // MARK: UILabel
-        with(UILabel.appearance(), do: {
-            $0.font = GLUCFont.regular
-        })
+//        with(UILabel.appearance(), do: {
+//            $0.font = GLUCFont.regular
+//        })
         
         //MARK: UIButton
         with(UIButton.appearance(), do: {
