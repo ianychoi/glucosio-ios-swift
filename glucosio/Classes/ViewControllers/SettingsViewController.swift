@@ -24,6 +24,9 @@ class SettingsViewController: UIViewController {
             settingsTableView.dataSource = self
             settingsTableView.delegate = self
             settingsTableView.allowsMultipleSelection = false
+            settingsTableView.rowHeight = 50.0
+            settingsTableView.tableHeaderView = UIView()
+            settingsTableView.tableFooterView = UIView()
             settingsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         }
     }
@@ -57,8 +60,8 @@ class SettingsViewController: UIViewController {
         let subtitleFontSize = cell.detailTextLabel!.font.pointSize
         
         //Set Glucosio defalt font
-        cell.textLabel?.font = GLUCFont.regular.withSize(titleFontSize)
-        cell.detailTextLabel?.font = GLUCFont.regular.withSize(subtitleFontSize)
+        cell.textLabel!.font = GLUCFont.regular.withSize(titleFontSize)
+        cell.detailTextLabel!.font = GLUCFont.regular.withSize(subtitleFontSize)
         
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = subtitle
@@ -68,66 +71,250 @@ class SettingsViewController: UIViewController {
     
     fileprivate func createSettingsCells() -> [UITableViewCell] {
         
-        let currentUser = PersistenceController.sharedInstance.currentUser
+        let user = PersistenceController.sharedInstance.currentUser
         
-        let countryCell = SettingsTableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let locale = NSLocale.current as NSLocale
         
-        let countryPicker = ListPickerController(items: [String]())
+        var currentCountry: String?  {
+            return locale.displayName(forKey: .countryCode, value: user.country)
+        }
         
-        let ageCell = subtitleCell(withTitle: L10n.helloactivityAge.localized(), subtitle: String(describing: currentUser.age))
-        ageCell.setOnSelectionHandler({             let agePicker = TextPickerController()
-            agePicker.setPopupPresentation()
-            agePicker.textField.placeholder = "Tipe your age".localized()
-            agePicker.textField.keyboardType = .decimalPad
-            agePicker.setOnPickerDidFinish({ text in
-                currentUser.age = Int(text)!
-                PersistenceController.sharedInstance.saveUser(user: currentUser)
+        let countryCell = subtitleCell(withTitle: L10n.helloactivityCountry.localized, subtitle: currentCountry)
+        countryCell.setOnSelectionHandler { [unowned self] in
+            let countryPicker = ListPickerController(items: NSLocale.isoCountryCodes)
+            countryPicker.setPopupPresentation()
+            countryPicker.setOnPickerWillDisplayItem({
+                locale.displayName(forKey: .countryCode, value: $0) ?? String(describing: $0)
+                })
+            countryPicker.setOnPickerDidFinish({ [unowned self, countryCell] pickedCountry in
+                user.country = pickedCountry
+                countryCell.detailTextLabel?.text = currentCountry
+                PersistenceController.sharedInstance.saveUser(user: user)
                 self.dismiss(animated: true)
-            })
-            agePicker.setOnPickerDidCancel({
+                })
+            countryPicker.setOnPickerDidCancel({ [unowned self] in
                 self.dismiss(animated: true)
-            })
+                })
             
-            self.present(agePicker, animated: true, completion: nil)
+            self.present(countryPicker, animated: true)
+        }
+        
+        
+        var currentAge: String? {
+            return String(describing: user.age)
+        }
+        
+        let ageCell = subtitleCell(withTitle: L10n.helloactivityAge.localized, subtitle: currentAge)
+        ageCell.setOnSelectionHandler({ [unowned self] in
+            let agePicker = TextPickerController()
+            agePicker.setPopupPresentation()
+            agePicker.textField.placeholder = "Type your age".localized
+            agePicker.textField.keyboardType = .decimalPad
+            agePicker.setOnPickerDidFinish({ [unowned self, ageCell] text in
+                user.age = Int(text)!
+                ageCell.detailTextLabel?.text = currentAge
+                PersistenceController.sharedInstance.saveUser(user: user)
+                self.dismiss(animated: true)
+                })
+            agePicker.setOnPickerDidCancel({ [unowned self] in
+                self.dismiss(animated: true)
+                })
+            
+            self.present(agePicker, animated: true)
             })
         
-        let genderCell = subtitleCell(withTitle: L10n.helloactivityGender.localized(), subtitle: String(describing: currentUser.gender).localized())
-        genderCell.setOnSelectionHandler({
+        var currentGender: String {
+            return String(describing: user.gender).localized
+        }
+        
+        let genderCell = subtitleCell(withTitle: L10n.helloactivityGender.localized, subtitle: currentGender)
+        genderCell.setOnSelectionHandler({ [unowned self] in
             let genderPicker = ListPickerController(items: [Gender.male, Gender.female])
             genderPicker.setPopupPresentation()
-            genderPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized() })
-            genderPicker.setOnPickerDidFinish({ pickedGender in
-                currentUser.gender = pickedGender
-                PersistenceController.sharedInstance.saveUser(user: currentUser)
+            genderPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized })
+            genderPicker.setOnPickerDidFinish({ [unowned self, genderCell] pickedGender in
+                user.gender = pickedGender
+                genderCell.detailTextLabel?.text = currentGender
+                PersistenceController.sharedInstance.saveUser(user: user)
                 self.dismiss(animated: true)
-            })
-            genderPicker.setOnPickerDidCancel({
+                })
+            genderPicker.setOnPickerDidCancel({ [unowned self] in
                 self.dismiss(animated: true)
-            })
+                })
             
-            self.present(genderPicker, animated: true, completion: nil)
+            self.present(genderPicker, animated: true)
             })
         
+        var currentDiabetes: String {
+            return String(describing: user.diabetes).localized
+        }
         
-        let diabetesCell = subtitleCell(withTitle: L10n.helloactivitySpinnerDiabetesType.localized(), subtitle: String(describing: currentUser.diabetes).localized())
-        diabetesCell.setOnSelectionHandler({
+        let diabetesCell = subtitleCell(withTitle: L10n.helloactivitySpinnerDiabetesType.localized, subtitle: currentDiabetes)
+        diabetesCell.setOnSelectionHandler({ [unowned self] in
             let diabetesPicker = ListPickerController(items: [Diabetes.type1, Diabetes.type2])
             diabetesPicker.setPopupPresentation()
-            diabetesPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized() })
-            diabetesPicker.setOnPickerDidFinish({ pickedDiabetes in
-                currentUser.diabetes = pickedDiabetes
-                PersistenceController.sharedInstance.saveUser(user: currentUser)
+            diabetesPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized })
+            diabetesPicker.setOnPickerDidFinish({ [unowned self, diabetesCell] pickedDiabetes in
+                user.diabetes = pickedDiabetes
+                diabetesCell.detailTextLabel?.text = currentDiabetes
+                PersistenceController.sharedInstance.saveUser(user: user)
                 self.dismiss(animated: true)
-            })
-            diabetesPicker.setOnPickerDidCancel({
+                })
+            diabetesPicker.setOnPickerDidCancel({ [unowned self] in
                 self.dismiss(animated: true)
-            })
+                })
             
-            self.present(diabetesPicker, animated: true, completion: nil)
+            self.present(diabetesPicker, animated: true)
             })
         
+        var currentGlucoseUnit: String {
+            return String(describing: user.preferredBloodGlucoseUnitOfMeasure).localized
+        }
         
-        return [countryCell, ageCell, genderCell, diabetesCell]
+        let glucoseUnitCell = subtitleCell(withTitle: L10n.helloactivitySpinnerPreferredUnit.localized, subtitle: currentGlucoseUnit)
+        glucoseUnitCell.setOnSelectionHandler({ [unowned self] in
+            let glucoseUnitPicker = ListPickerController(items: [GlucoseUnitOfMeasure.mg_dL, GlucoseUnitOfMeasure.mmol_L])
+            glucoseUnitPicker.setPopupPresentation()
+            glucoseUnitPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized })
+            glucoseUnitPicker.setOnPickerDidFinish({ [unowned self, glucoseUnitCell] pickedUnit in
+                user.preferredBloodGlucoseUnitOfMeasure = pickedUnit
+                glucoseUnitCell.detailTextLabel?.text = currentGlucoseUnit
+                PersistenceController.sharedInstance.saveUser(user: user)
+                self.dismiss(animated: true)
+                })
+            glucoseUnitPicker.setOnPickerDidCancel({ [unowned self] in
+                self.dismiss(animated: true)
+                })
+            
+            self.present(glucoseUnitPicker, animated: true)
+            })
+        
+        var currentA1CUnit: String {
+            return String(describing: user.preferredA1CUnitOfMeasure).localized
+        }
+        
+        let a1CUnitCell = subtitleCell(withTitle: "Preferred A1C Unit", subtitle: currentA1CUnit)
+        a1CUnitCell.setOnSelectionHandler({ [unowned self] in
+            let a1CUnitPicker = ListPickerController(items: [A1CUnitOfMeasure.percentage, A1CUnitOfMeasure.mmol_mol])
+            a1CUnitPicker.setPopupPresentation()
+            a1CUnitPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized })
+            a1CUnitPicker.setOnPickerDidFinish({ [unowned self, a1CUnitCell] pickedUnit in
+                user.preferredA1CUnitOfMeasure = pickedUnit
+                a1CUnitCell.detailTextLabel?.text = currentA1CUnit
+                PersistenceController.sharedInstance.saveUser(user: user)
+                self.dismiss(animated: true)
+                })
+            a1CUnitPicker.setOnPickerDidCancel({ [unowned self] in
+                self.dismiss(animated: true)
+                })
+            
+            self.present(a1CUnitPicker, animated: true)
+            })
+        
+        var currentWeightUnit: String {
+            return String(describing: user.preferredBodyWeightUnitOfMeasure).localized
+        }
+        
+        let weightUnitCell = subtitleCell(withTitle: "Preferred Weight Unit".localized, subtitle: currentWeightUnit)
+        weightUnitCell.setOnSelectionHandler({ [unowned self] in
+            let weightUnitPicker = ListPickerController(items: [BodyWeightUnitOfMeasure.kilograms, BodyWeightUnitOfMeasure.pounds])
+            weightUnitPicker.setPopupPresentation()
+            weightUnitPicker.setOnPickerWillDisplayItem({ String(describing:$0).localized })
+            weightUnitPicker.setOnPickerDidFinish({ [unowned self, weightUnitCell] pickedUnit in
+                user.preferredBodyWeightUnitOfMeasure = pickedUnit
+                weightUnitCell.detailTextLabel?.text = currentWeightUnit
+                PersistenceController.sharedInstance.saveUser(user: user)
+                self.dismiss(animated: true)
+                })
+            weightUnitPicker.setOnPickerDidCancel({ [unowned self] in
+                self.dismiss(animated: true)
+                })
+            
+            self.present(weightUnitPicker, animated: true)
+        })
+        
+        var currentRangeLowerBound: String {
+            return String(describing: user.preferredGlucoseRange.lowerBound)
+        }
+        
+        let minRangeCell = subtitleCell(withTitle: L10n.helloactivityPreferredRangeMin.localized, subtitle: currentRangeLowerBound)
+        minRangeCell.setOnSelectionHandler({ [unowned self] in
+            let lowerBoundPicker = TextPickerController()
+            lowerBoundPicker.setPopupPresentation()
+            lowerBoundPicker.textField.placeholder = "Type custom lower bound".localized
+            lowerBoundPicker.textField.keyboardType = .decimalPad
+            lowerBoundPicker.setOnPickerDidFinish({ [unowned self, minRangeCell] text in
+                user.preferredGlucoseRange.lowerBound = Int(text)!
+                minRangeCell.detailTextLabel?.text = currentRangeLowerBound
+                PersistenceController.sharedInstance.saveUser(user: user)
+                self.dismiss(animated: true)
+                })
+            lowerBoundPicker.setOnPickerDidCancel({ [unowned self] in
+                self.dismiss(animated: true)
+                })
+            
+            self.present(lowerBoundPicker, animated: true)
+        })
+        
+        var currentRangeUpperBound: String {
+            return String(describing: user.preferredGlucoseRange.upperBound)
+        }
+        
+        let maxRangeCell = subtitleCell(withTitle: L10n.helloactivityPreferredRangeMax.localized, subtitle: currentRangeUpperBound)
+        maxRangeCell.setOnSelectionHandler({ [unowned self] in
+            let upperBoundPicker = TextPickerController()
+            upperBoundPicker.setPopupPresentation()
+            upperBoundPicker.textField.placeholder = "Type custom upper bound".localized
+            upperBoundPicker.textField.keyboardType = .decimalPad
+            upperBoundPicker.setOnPickerDidFinish({ [unowned self, maxRangeCell] text in
+                user.preferredGlucoseRange.upperBound = Int(text)!
+                maxRangeCell.detailTextLabel?.text = currentRangeUpperBound
+                PersistenceController.sharedInstance.saveUser(user: user)
+                self.dismiss(animated: true)
+                })
+            upperBoundPicker.setOnPickerDidCancel({ [unowned self] in
+                self.dismiss(animated: true)
+                })
+            
+            self.present(upperBoundPicker, animated: true)
+            })
+        
+        var currentRange: String {
+            return String.init(describing: user.preferredGlucoseRange).localized
+        }
+        
+        let rangeCell = subtitleCell(withTitle: L10n.helloactivitySpinnerPreferredRange.localized, subtitle: currentRange)
+        rangeCell.setOnSelectionHandler({ [unowned self] in
+            let rangePicker = ListPickerController(items: [GlucoseRange.ada,
+                                                           GlucoseRange.aace,
+                                                           GlucoseRange.ukNice,
+                                                           GlucoseRange(lowerBound: GlucoseRange.ada.lowerBound, upperBound: GlucoseRange.ada.upperBound)])
+            rangePicker.setPopupPresentation()
+            rangePicker.setOnPickerWillDisplayItem({ String(describing:$0).localized })
+            rangePicker.setOnPickerDidFinish({ [unowned self] pickedRange in
+                user.preferredGlucoseRange = pickedRange
+                rangeCell.detailTextLabel?.text = currentRange
+                PersistenceController.sharedInstance.saveUser(user: user)
+                
+                let isEnabled = (pickedRange.type == .custom)
+                minRangeCell.isEnabled = isEnabled
+                maxRangeCell.isEnabled = isEnabled
+                
+                self.dismiss(animated: true)
+                })
+            rangePicker.setOnPickerDidCancel({ [unowned self] in
+                self.dismiss(animated: true)
+                })
+            
+            self.present(rangePicker, animated: true)
+            })
+        
+        if user.preferredGlucoseRange.type != .custom {
+            minRangeCell.isEnabled = false
+            maxRangeCell.isEnabled = false
+        }
+        
+        return [countryCell, ageCell, genderCell, diabetesCell, glucoseUnitCell, a1CUnitCell, weightUnitCell, rangeCell, minRangeCell, maxRangeCell]
     }
     
 }
