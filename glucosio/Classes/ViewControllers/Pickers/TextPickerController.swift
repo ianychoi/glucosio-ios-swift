@@ -43,7 +43,7 @@ class TextPickerController: PickerController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = GLUCFont.bold
-        button.setTitle("Ok".localized(), for: .normal)
+        button.setTitle("Ok".localized, for: .normal)
         button.addTarget(self, action: #selector(okButtonClicked(_:)), for: .touchUpInside)
         button.isEnabled = false
         return button
