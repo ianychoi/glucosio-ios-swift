@@ -15,51 +15,39 @@ private let kRangeUpperBoundKey = "glucose_range_upper_bound"
 
 class GlucoseRange: NSObject, NSCoding {
     
-    enum RangeType: Int, CustomStringConvertible {
-        
+    enum RangeType: Int {
         case ada = 0
         case aace = 1
         case ukNice = 2
         case custom = 3
-        
-        var description: String {
-            
-            switch self {
-            case .ada: return L10n.helloactivitySpinnerPreferredRange1
-            case .aace: return L10n.helloactivitySpinnerPreferredRange2
-            case .ukNice: return L10n.helloactivitySpinnerPreferredRange3
-            case .custom: return L10n.helloactivitySpinnerPreferredRange4
-            }
-        }
     }
     
     let type: RangeType
-    let lowerBound: Int
-    let upperBound: Int
+    var lowerBound: Int
+    var upperBound: Int
     
     class var ada: GlucoseRange {
         return GlucoseRange(type: .ada, lowerBound: 70, upperBound: 180)
     }
 
     class var aace: GlucoseRange {
-        return GlucoseRange(type: .ada, lowerBound: 110, upperBound: 140)
+        return GlucoseRange(type: .aace, lowerBound: 110, upperBound: 140)
     }
     
     class var ukNice: GlucoseRange {
-        return GlucoseRange(type: .ada, lowerBound: 72, upperBound: 153)
-    }
-    
-    private init(type t: RangeType, lowerBound lower: Int, upperBound upper: Int) {
-        type = t
-        lowerBound = lower
-        upperBound = upper
-        super.init()
+        return GlucoseRange(type: .ukNice, lowerBound: 72, upperBound: 153)
     }
     
     convenience init(lowerBound lower: Int, upperBound upper: Int) {
         self.init(type: .custom, lowerBound: lower, upperBound: upper)
     }
     
+    fileprivate init(type t: RangeType, lowerBound lower: Int, upperBound upper: Int) {
+        type = t
+        lowerBound = lower
+        upperBound = upper
+        super.init()
+    }
     
     // MARK: - NSCoding
     
@@ -73,6 +61,18 @@ class GlucoseRange: NSObject, NSCoding {
         aCoder.encode(type.rawValue, forKey: kRangeTypeKey)
         aCoder.encode(lowerBound, forKey: kRangeLowerBoundKey)
         aCoder.encode(upperBound, forKey: kRangeUpperBoundKey)
+    }
+    
+    // MARK: - CustomStringConvertible
+    
+    override var description: String {
+        
+        switch self.type {
+        case .ada: return L10n.helloactivitySpinnerPreferredRange1
+        case .aace: return L10n.helloactivitySpinnerPreferredRange2
+        case .ukNice: return L10n.helloactivitySpinnerPreferredRange3
+        case .custom: return L10n.helloactivitySpinnerPreferredRange4
+        }
     }
     
 }
