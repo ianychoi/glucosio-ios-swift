@@ -21,9 +21,13 @@ struct GLUCFont {
     
     static let boldFontName = "Lato-Bold"
     
-    static let regular = UIFont(name: regularFontName, size: UIFont.systemFontSize)!
+    static var regular: UIFont {
+        return UIFont(name: regularFontName, size: UIFont.systemFontSize)!
+    }
     
-    static let bold = UIFont(name: boldFontName, size: UIFont.systemFontSize)!
+    static var bold: UIFont {
+        return UIFont(name: boldFontName, size: UIFont.systemFontSize)!
+    }
 }
 
 enum GLUCAsset: String {
