@@ -14,6 +14,14 @@ class SettingsTableViewCell: UITableViewCell {
     
     fileprivate(set) var onSelection: CellSelectionHandler? = nil
     
+    var isEnabled: Bool = true {
+        didSet {
+            isUserInteractionEnabled = isEnabled
+            textLabel?.isEnabled = isEnabled
+            detailTextLabel?.isEnabled = isEnabled
+        }
+    }
+    
     func setOnSelectionHandler(_ block: CellSelectionHandler?) {
         onSelection = block
     }
