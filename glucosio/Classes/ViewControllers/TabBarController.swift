@@ -38,7 +38,7 @@ class TabBarController: UITabBarController {
                 if let currentImage = tab.image {
                     tab.image = currentImage.withRenderingMode(.alwaysOriginal)
                 }
-                tab.title = tabTitles[index].localized()
+                tab.title = tabTitles[index].localized
             }
         }
     }

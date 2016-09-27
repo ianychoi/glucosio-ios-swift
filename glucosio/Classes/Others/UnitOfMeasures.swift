@@ -77,7 +77,7 @@ extension BodyWeightUnitOfMeasure: CustomStringConvertible {
     
     var localizedDescription: String {
         
-        return description.localized()
+        return description.localized
     }
 }
 
